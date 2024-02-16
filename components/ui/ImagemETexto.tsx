@@ -34,18 +34,18 @@ export default function ImagemETexto(
         <Picture class="w-full h-full background-image">
           <Source
             media="(max-width: 767px)"
-            src={background?.mobile} 
+            src={background?.mobile}
             width={400}
           />
           <Source
             media="(min-width: 768px)"
-            src={background?.desktop} 
+            src={background?.desktop}
             width={1920}
           />
           <img
             class="w-full h-full"
             src={background?.desktop}
-            width={1920} 
+            width={1920}
             decoding="async"
             loading="lazy"
           />
@@ -58,12 +58,12 @@ export default function ImagemETexto(
             <Picture>
               <Source
                 media="(max-width: 767px)"
-                src={image?.mobile} 
+                src={image?.mobile}
                 width={400}
               />
               <Source
                 media="(min-width: 768px)"
-                src={image?.desktop} 
+                src={image?.desktop}
                 width={400}
               />
               <img

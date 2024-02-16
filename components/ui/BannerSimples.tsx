@@ -39,12 +39,12 @@ export default function FullBanner(
         <Picture>
           <Source
             media="(max-width: 768px)"
-            src={imagemMobile.Imagem} 
+            src={imagemMobile.Imagem}
             width={360}
           />
           <Source
             media="(min-width: 768px)"
-            src={imagemDesktop.Imagem} 
+            src={imagemDesktop.Imagem}
             width={1200}
           />
           <img

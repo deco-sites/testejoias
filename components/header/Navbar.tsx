@@ -27,8 +27,9 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
   const segundaMetadeMenu = items.slice(Math.ceil(items.length / 2));
 
   return (
-    <> 
-      {/* {!buttons?.hideAccountButton && (
+    <>
+      {
+        /* {!buttons?.hideAccountButton && (
         <a
           class="flex items-center text-xs font-thin"
           href="/account"
@@ -54,8 +55,8 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
           </button>
           WISHLIST
         </a>
-      )} */}
-
+      )} */
+      }
 
       {/* Mobile Version */}
       <div
@@ -99,7 +100,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
             }`}
           >
             {primeiraMetadeMenu.map((item) => <NavItem item={item} />)}
-          </ul> 
+          </ul>
 
           {logo && (
             <a
@@ -119,15 +120,16 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
           <ul
             class={`flex gap-8 col-span-1 ${
               logoPosition === "left" ? "justify-center" : "justify-start"
-            }`} 
+            }`}
           >
             {segundaMetadeMenu.map((item) => <NavItem item={item} />)}
-          </ul> 
+          </ul>
 
           <div class="flex-none flex items-center justify-end gap-6 col-span-1">
             {!buttons?.hideSearchButton && (
               <div class="flex items-center text-xs font-thin gap-1">
-                <SearchButton /><span class="text-secondary">Pesquisar</span>
+                <SearchButton />
+                <span class="text-secondary">Pesquisar</span>
               </div>
             )}
 

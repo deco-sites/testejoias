@@ -363,7 +363,7 @@ function Footer({
 
       <div class="container copyright py-8">
         <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-          <p class="fontsize-12px">{copyright}</p> 
+          <p class="fontsize-12px">{copyright}</p>
           {
             /* {plataformasLogo?.image && (
             <div class="flex flex-col gap-3">

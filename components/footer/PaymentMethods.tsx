@@ -28,7 +28,7 @@ export default function PaymentMethods(
           <ul class="flex items-center gap-1 flex-wrap">
             {content.items.map((item) => {
               return (
-                <li 
+                <li
                   title={item.label}
                 >
                   <Icon
