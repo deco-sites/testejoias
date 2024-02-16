@@ -16,7 +16,7 @@ export interface Props {
     description: string;
   }>;
   layout?: {
-    variation?: "Simple" | "With border" | "Color reverse";
+    variation?: "Simple" | "With border" | "Color secondary";
     headerAlignment?: "center" | "left";
   };
 }
@@ -45,7 +45,7 @@ export default function Benefits(
 
   const listOfBenefits = benefits.map((benefit, index) => {
     const showDivider = index < benefits.length - 1;
-    const reverse = layout?.variation === "Color reverse";
+    const reverse = layout?.variation === "Color secondary";
     const benefitLayout = !layout?.variation || layout?.variation === "Simple"
       ? "tiled"
       : "piledup";
@@ -53,7 +53,9 @@ export default function Benefits(
     return (
       <div
         class={`${
-          reverse ? "bg-primary text-primary-content p-4 lg:px-8 lg:py-4" : ""
+          reverse
+            ? "bg-secondary text-secondary-content rounded-md p-4 lg:px-8 lg:py-4"
+            : ""
         } flex gap-4 ${
           benefitLayout == "piledup" ? "flex-col items-center text-center" : ""
         } ${
@@ -126,7 +128,7 @@ export default function Benefits(
           </div>
         </div>
       )}
-      {layout?.variation === "Color reverse" && (
+      {layout?.variation === "Color secondary" && (
         <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
           <Header
             title={title}

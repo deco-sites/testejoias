@@ -3,7 +3,6 @@ export interface Props {
   fontSize?: "Small" | "Normal" | "Large";
   description?: string;
   alignment?: "center" | "left";
-  colorReverse?: boolean;
 }
 
 const fontSizeClasses = {
@@ -24,34 +23,15 @@ function Header(props: Props) {
           >
             {props.title &&
               (
-                <h1
-                  class={`text-2xl font-light leading-8 lg:leading-10
-                  ${
-                    props.colorReverse
-                      ? "text-primary-content"
-                      : "text-base-content"
-                  }
-                  ${fontSizeClasses[props.fontSize || "Normal"]}
-                `}
-                >
+                <h2 class="fontsize-46px font-playfair text-secondary font-bold">
                   {props.title}
-                </h1>
+                </h2>
               )}
             {props.description &&
               (
-                <h2
-                  class={`
-                  leading-6 lg:leading-8
-                  ${
-                    props.colorReverse
-                      ? "text-primary-content"
-                      : "text-base-content"
-                  }
-                  ${fontSizeClasses[props.fontSize || "Normal"]}
-                `}
-                >
+                <h3 class="text-primary text-sm separador-primary">
                   {props.description}
-                </h2>
+                </h3>
               )}
           </div>
         )

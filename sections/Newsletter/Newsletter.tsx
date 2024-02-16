@@ -44,17 +44,6 @@ export default function Newsletter(props: Props) {
   const { title, description, form, layout } = { ...DEFAULT_PROPS, ...props };
   const isReverse = layout?.content?.bgColor === "Reverse";
   const bordered = Boolean(layout?.content?.border);
-
-  const headerLayout = (
-    <Header
-      title={title}
-      description={description}
-      alignment={layout?.content?.alignment === "Left" ? "left" : "center"}
-      colorReverse={isReverse}
-      fontSize={layout?.headerFontSize}
-    />
-  );
-
   const formLayout = form && (
     <form action="/" class="flex flex-col gap-4">
       <div class="flex flex-col lg:flex-row gap-3">
@@ -96,7 +85,6 @@ export default function Newsletter(props: Props) {
         <div
           class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
         >
-          {headerLayout}
           <div class="flex justify-center">
             {formLayout}
           </div>
@@ -106,7 +94,6 @@ export default function Newsletter(props: Props) {
         <div
           class={`container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
         >
-          {headerLayout}
           <div class="flex justify-start">
             {formLayout}
           </div>
@@ -116,7 +103,6 @@ export default function Newsletter(props: Props) {
         <div
           class={`container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
         >
-          {headerLayout}
           <div class="flex justify-center">
             {formLayout}
           </div>

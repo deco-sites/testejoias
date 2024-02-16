@@ -51,7 +51,7 @@ function TabbedProductShelf({
   }
 
   return (
-    <div class="w-full container  py-8 flex flex-col gap-8 lg:gap-12 lg:py-10">
+    <div class="w-full container  py-8 flex flex-col gap-8 lg:gap-6 lg:py-8">
       <Header
         title={title || ""}
         description={description || ""}

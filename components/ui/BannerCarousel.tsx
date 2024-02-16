@@ -20,16 +20,12 @@ export interface Banner {
   /** @description mobile otimized image */
   mobile: ImageWidget;
   /** @description Image's alt text */
-  alt: string;
+  alt?: string;
   action?: {
     /** @description when user clicks on the image, go to this link */
     href: string;
     /** @description Image text title */
     title: string;
-    /** @description Image text subtitle */
-    subTitle: string;
-    /** @description Button label */
-    label: string;
   };
 }
 
@@ -62,8 +58,6 @@ const DEFAULT_PROPS = {
       alt: "/feminino",
       action: {
         title: "New collection",
-        subTitle: "Main title",
-        label: "Explore collection",
         href: "/",
       },
       mobile:
@@ -75,8 +69,6 @@ const DEFAULT_PROPS = {
       alt: "/feminino",
       action: {
         title: "New collection",
-        subTitle: "Main title",
-        label: "Explore collection",
         href: "/",
       },
       mobile:
@@ -88,8 +80,6 @@ const DEFAULT_PROPS = {
       alt: "/feminino",
       action: {
         title: "New collection",
-        subTitle: "Main title",
-        label: "Explore collection",
         href: "/",
       },
       mobile:
@@ -115,25 +105,8 @@ function BannerItem(
     <a
       id={id}
       href={action?.href ?? "#"}
-      aria-label={action?.label}
       class="relative overflow-y-hidden w-full"
     >
-      {action && (
-        <div class="absolute top-0 md:bottom-0 bottom-1/2 left-0 right-0 sm:right-auto max-w-[407px] flex flex-col justify-end gap-4 px-8 py-12">
-          <span class="text-2xl font-light text-base-100">
-            {action.title}
-          </span>
-          <span class="font-normal text-4xl text-base-100">
-            {action.subTitle}
-          </span>
-          <Button
-            class="bg-base-100 text-sm font-light py-4 px-6 w-fit"
-            aria-label={action.label}
-          >
-            {action.label}
-          </Button>
-        </div>
-      )}
       <Picture preload={lcp}>
         <Source
           media="(max-width: 767px)"

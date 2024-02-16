@@ -23,9 +23,40 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
   logoPosition?: "left" | "center";
 }) {
   const platform = usePlatform();
+  const primeiraMetadeMenu = items.slice(0, Math.ceil(items.length / 2));
+  const segundaMetadeMenu = items.slice(Math.ceil(items.length / 2));
 
   return (
-    <>
+    <> 
+      {/* {!buttons?.hideAccountButton && (
+        <a
+          class="flex items-center text-xs font-thin"
+          href="/account"
+          aria-label="Account"
+        >
+          <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
+            <Icon id="User" size={20} strokeWidth={0.4} />
+          </div>
+          ACCOUNT
+        </a>
+      )}
+      {!buttons?.hideWishlistButton && (
+        <a
+          class="flex items-center text-xs font-thin"
+          href="/wishlist"
+          aria-label="Wishlist"
+        >
+          <button
+            class="flex btn btn-circle btn-sm btn-ghost gap-1"
+            aria-label="Wishlist"
+          >
+            <Icon id="Heart" size={24} strokeWidth={0.4} />
+          </button>
+          WISHLIST
+        </a>
+      )} */}
+
+
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
@@ -60,21 +91,16 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden lg:grid lg:grid-cols-3 items-center border-b border-base-200 w-full px-6">
-        <ul
-          class={`flex gap-6 col-span-1 ${
-            logoPosition === "left" ? "justify-center" : "justify-start"
-          }`}
-        >
-          {items.map((item) => <NavItem item={item} />)}
-        </ul>
-        <div
-          class={`flex ${
-            logoPosition === "left"
-              ? "justify-start -order-1"
-              : "justify-center"
-          }`}
-        >
+      <div class="hidden lg:block w-full bg-white py-3">
+        <div class="flex container justify-between items-center">
+          <ul
+            class={`flex gap-8 col-span-1 ${
+              logoPosition === "left" ? "justify-center" : "justify-start"
+            }`}
+          >
+            {primeiraMetadeMenu.map((item) => <NavItem item={item} />)}
+          </ul> 
+
           {logo && (
             <a
               href="/"
@@ -84,57 +110,40 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={logo.width || 100}
-                height={logo.height || 13}
+                width={logo.width || 205}
+                height={logo.height || 64}
               />
             </a>
           )}
-        </div>
-        <div class="flex-none flex items-center justify-end gap-6 col-span-1">
-          {!buttons?.hideSearchButton && (
-            <div class="flex items-center text-xs font-thin gap-1">
-              <SearchButton />SEARCH
-            </div>
-          )}
 
-          <Searchbar searchbar={searchbar} />
-          {!buttons?.hideAccountButton && (
-            <a
-              class="flex items-center text-xs font-thin"
-              href="/account"
-              aria-label="Account"
-            >
-              <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
-                <Icon id="User" size={20} strokeWidth={0.4} />
+          <ul
+            class={`flex gap-8 col-span-1 ${
+              logoPosition === "left" ? "justify-center" : "justify-start"
+            }`} 
+          >
+            {segundaMetadeMenu.map((item) => <NavItem item={item} />)}
+          </ul> 
+
+          <div class="flex-none flex items-center justify-end gap-6 col-span-1">
+            {!buttons?.hideSearchButton && (
+              <div class="flex items-center text-xs font-thin gap-1">
+                <SearchButton /><span class="text-secondary">Pesquisar</span>
               </div>
-              ACCOUNT
-            </a>
-          )}
-          {!buttons?.hideWishlistButton && (
-            <a
-              class="flex items-center text-xs font-thin"
-              href="/wishlist"
-              aria-label="Wishlist"
-            >
-              <button
-                class="flex btn btn-circle btn-sm btn-ghost gap-1"
-                aria-label="Wishlist"
-              >
-                <Icon id="Heart" size={24} strokeWidth={0.4} />
-              </button>
-              WISHLIST
-            </a>
-          )}
-          {!buttons?.hideCartButton && (
-            <div class="flex items-center text-xs font-thin">
-              {platform === "vtex" && <CartButtonVTEX />}
-              {platform === "vnda" && <CartButtonVDNA />}
-              {platform === "wake" && <CartButtonWake />}
-              {platform === "linx" && <CartButtonLinx />}
-              {platform === "shopify" && <CartButtonShopify />}
-              {platform === "nuvemshop" && <CartButtonNuvemshop />}
-            </div>
-          )}
+            )}
+
+            <Searchbar searchbar={searchbar} />
+
+            {!buttons?.hideCartButton && (
+              <div class="flex items-center text-xs font-thin">
+                {platform === "vtex" && <CartButtonVTEX />}
+                {platform === "vnda" && <CartButtonVDNA />}
+                {platform === "wake" && <CartButtonWake />}
+                {platform === "linx" && <CartButtonLinx />}
+                {platform === "shopify" && <CartButtonShopify />}
+                {platform === "nuvemshop" && <CartButtonNuvemshop />}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>

@@ -56,8 +56,8 @@ interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 200;
-const HEIGHT = 279;
+const WIDTH = 250;
+const HEIGHT = 250;
 
 function ProductCard({
   product,
@@ -104,9 +104,9 @@ function ProductCard({
     <a
       href={url && relative(url)}
       aria-label="view product"
-      class="btn btn-block"
+      class="btn btn-block py-2 min-height-unset h-auto color-white"
     >
-      {l?.basics?.ctaText || "Ver produto"}
+      {l?.basics?.ctaText || "ADICIONAR AO CARRINHO"}
     </a>
   );
 
@@ -309,7 +309,7 @@ function ProductCard({
                 >
                   {formatPrice(listPrice, offers?.priceCurrency)}
                 </div>
-                <div class="text-base-content lg:text-sm font-light">
+                <div class="text-secondary font-bold text-xl">
                   {formatPrice(price, offers?.priceCurrency)}
                 </div>
               </div>
