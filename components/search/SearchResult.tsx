@@ -62,7 +62,7 @@ function Result({
           displayFilter={layout?.variant === "drawer"}
         />
 
-        <div class="flex flex-row">
+        <div class="flex flex-row gap-20">
           {layout?.variant === "aside" && filters.length > 0 && (
             <aside class="hidden sm:block w-min min-w-[250px]">
               <Filters filters={filters} />

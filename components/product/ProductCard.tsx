@@ -76,7 +76,6 @@ function ProductCard({
   const { listPrice, price, installments } = useOffer(offers);
   const possibilities = useVariantPossibilities(hasVariant, product);
   const variants = Object.entries(Object.values(possibilities)[0] ?? {});
-
   const l = layout;
   const align =
     !l?.basics?.contentAlignment || l?.basics?.contentAlignment == "Left"
@@ -104,7 +103,7 @@ function ProductCard({
     <a
       href={url && relative(url)}
       aria-label="view product"
-      class="btn btn-block py-2 min-height-unset h-auto color-white"
+      class="btn btn-block py-2 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe] "
     >
       {l?.basics?.ctaText || "ADICIONAR AO CARRINHO"}
     </a>
@@ -273,8 +272,10 @@ function ProductCard({
                 )
                 : (
                   <h2
-                    class="truncate text-base lg:text-lg text-base-content uppercase font-normal"
-                    dangerouslySetInnerHTML={{ __html: name ?? "" }}
+                    class="text-base text-sm text-base-content font-normal"
+                    dangerouslySetInnerHTML={{
+                      __html: (name !== undefined ? name.replace("[SKU] ", "") : ""),
+                    }}
                   />
                 )}
               {l?.hide?.productDescription
@@ -309,7 +310,7 @@ function ProductCard({
                 >
                   {formatPrice(listPrice, offers?.priceCurrency)}
                 </div>
-                <div class="text-secondary font-bold text-xl">
+                <div class="font-bold text-xl text-[#581c87]">
                   {formatPrice(price, offers?.priceCurrency)}
                 </div>
               </div>

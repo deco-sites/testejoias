@@ -24,11 +24,11 @@ function ValueItem(
       rel="nofollow"
       class="flex items-center justify-between w-full"
     >
-      <div aria-checked={selected} class="checkbox" />
-      <span class="hidden text-sm">{label}</span>
+      <span class="text-sm">{label.split("/").pop()}</span>
       {quantity > 0 && (
         <span class="hidden text-sm text-base-300">({quantity})</span>
       )}
+      <div aria-checked={selected} class="checkbox" />
     </a>
   );
 }
