@@ -274,7 +274,8 @@ function ProductCard({
                   <h2
                     class="text-base text-sm text-base-content font-normal"
                     dangerouslySetInnerHTML={{
-                      __html: (name !== undefined ? name.replace("[SKU] ", "") : ""),
+                      __html:
+                        (name !== undefined ? name.replace("[SKU] ", "") : ""),
                     }}
                   />
                 )}
