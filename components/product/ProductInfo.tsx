@@ -1,5 +1,4 @@
 import { SendEventOnView } from "$store/components/Analytics.tsx";
-import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import AddToCartButtonLinx from "$store/islands/AddToCartButton/linx.tsx";
 import AddToCartButtonShopify from "$store/islands/AddToCartButton/shopify.tsx";
 import AddToCartButtonVNDA from "$store/islands/AddToCartButton/vnda.tsx";
@@ -71,7 +70,6 @@ function ProductInfo({ page, layout }: Props) {
 
   return (
     <div class="flex flex-col" id={id}>
-      <Breadcrumb itemListElement={breadcrumb.itemListElement} />
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
@@ -95,16 +93,23 @@ function ProductInfo({ page, layout }: Props) {
           </div>
         )}
         <div class="text-2xl text-base-300 text-secondary font-bold py-2">{installments}</div>
+        {(listPrice ?? 0) > price && (
+          <div class="text-2xl text-base-300">            
+            {listPrice && price
+            ? `${Math.round(((listPrice - price) / listPrice) * 100)}% de desconto`
+            : ""}
+          </div>
+         )}
         <div class="font-light text-base">
           Ou {formatPrice(price, offers?.priceCurrency)}
         </div>     
       </div>
       {/* Sku Selector */}
-      <div class="mt-4 sm:mt-6">
+      <div class="">
         <ProductSelector product={product} />
       </div>
       {/* Add to Cart and Favorites button */}
-      <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+      <div class="mt-4 sm:mt-6 flex gap-2">
         {availability === "https://schema.org/InStock"
           ? (
             <>
@@ -180,7 +185,7 @@ function ProductInfo({ page, layout }: Props) {
           />
         )}
       </div>
-      {/* Description card */}
+      {/* Description card 
       <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {description && (
@@ -194,6 +199,7 @@ function ProductInfo({ page, layout }: Props) {
           )}
         </span>
       </div>
+      */}
       {/* Analytics Event */}
       <SendEventOnView
         id={id}
