@@ -46,7 +46,7 @@ export default function GallerySlider(props: Props) {
               class="carousel-item w-full"
             >
               <Image
-                class="w-full"
+                class="w-full rounded-3xl"
                 sizes="(max-width: 640px) 100vw, 40vw"
                 style={{ aspectRatio }}
                 src={img.url!}
@@ -71,7 +71,7 @@ export default function GallerySlider(props: Props) {
                 style={{ aspectRatio }}
                 class="group-disabled:border-base-300 border rounded "
                 width={110}
-                height={90}
+                height={110}
                 src={img.url!}
                 alt={img.alternateName}
               />

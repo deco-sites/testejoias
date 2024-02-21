@@ -73,10 +73,10 @@ function ProductInfo({ page, layout }: Props) {
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
-          {gtin && <span class="text-sm text-base-300">Cod. {gtin}</span>}
+          <span class="text-sm text-base-300 color-[#707070]">CóUni: {productID}</span>
         </div>
         <h1>
-          <span class="font-bold apitalize text-4xl">
+          <span class="font-bold apitalize text-4xl color-[#2B3243] mt-4 block">
             {layout?.name === "concat"
               ? `${isVariantOf?.name} ${name}`
               : layout?.name === "productGroup"
@@ -88,13 +88,13 @@ function ProductInfo({ page, layout }: Props) {
       {/* Prices */}
       <div class="mt-4">       
         {(listPrice ?? 0) > price && (
-          <div class="text-xl text-base-content">
+          <div class="text-lg text-base-content color-[#707070]">
             de: <span class="line-through">{formatPrice(listPrice, offers?.priceCurrency)}</span> 
           </div>
         )}
-        <div class="text-2xl text-base-300 text-secondary font-bold py-2">{installments}</div>
+        <div class="fontsize-26px text-base-300 text-secondary font-bold py-1">{installments}</div>
         {(listPrice ?? 0) > price && (
-          <div class="text-2xl text-base-300">            
+          <div class="fontsize-22px text-base-300 color-[#00c9a2]">            
             {listPrice && price
             ? `${Math.round(((listPrice - price) / listPrice) * 100)}% de desconto`
             : ""}
