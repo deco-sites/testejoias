@@ -36,7 +36,7 @@ export default function GallerySlider(props: Props) {
   const aspectRatio = `${width} / ${height}`;
 
   return (
-    <div id={id} class="grid grid-flow-row sm:grid-flow-col gap-3">
+    <div id={id} class="grid grid-flow-row sm:grid-flow-col gap-3 product-gallery">
       {/* Image Slider */}
       <div class="relative order-1 sm:order-2">
         <Slider class="carousel carousel-center gap-6 w-screen sm:w-[40vw]">
@@ -71,7 +71,7 @@ export default function GallerySlider(props: Props) {
                 style={{ aspectRatio }}
                 class="group-disabled:border-base-300 border rounded "
                 width={110}
-                height={110}
+                height={110} 
                 src={img.url!}
                 alt={img.alternateName}
               />

@@ -72,11 +72,11 @@ function ProductInfo({ page, layout }: Props) {
     <div class="flex flex-col" id={id}>
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
-        <div>
+        <div> 
           <span class="text-sm text-base-300 color-[#707070]">CóUni: {productID}</span>
         </div>
         <h1>
-          <span class="font-bold apitalize text-4xl color-[#2B3243] mt-4 block">
+          <span class="font-bold apitalize text-4xl color-[#2B3243] mt-4 block font-playfair">
             {layout?.name === "concat"
               ? `${isVariantOf?.name} ${name}`
               : layout?.name === "productGroup"
@@ -105,7 +105,7 @@ function ProductInfo({ page, layout }: Props) {
         </div>     
       </div>
       {/* Sku Selector */}
-      <div class="">
+      <div class="mt-4">
         <ProductSelector product={product} />
       </div>
       {/* Add to Cart and Favorites button */}

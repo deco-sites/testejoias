@@ -187,3 +187,14 @@ html::-webkit-scrollbar-thumb{
 .color-\[\#2B3243\] {
   color: #2B3243;
 }
+
+select.aros{
+  border: 1px solid #707070;
+  min-width: 160px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.product-gallery .group:disabled .group-disabled\:border-base-300{
+  border: 2px solid #B994FE;
+}
