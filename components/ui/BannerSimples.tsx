@@ -28,7 +28,11 @@ export default function FullBanner(
       class={`
       ${Fullbanner == true ? "row" : "container"}  
       ${margem?.tamanhoDoEspacamento == "Margem pequena" ? "my-4" : ""}
-      ${margem?.tamanhoDoEspacamento == "Margem grande" ? "my-20 px-4 lg:px-0" : ""}
+      ${
+        margem?.tamanhoDoEspacamento == "Margem grande"
+          ? "my-20 px-4 lg:px-0"
+          : ""
+      }
       `}
     >
       <a

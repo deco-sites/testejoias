@@ -16,7 +16,7 @@ export default function SearchButton() {
       >
         <Icon id="MagnifyingGlass" size={20} strokeWidth={0.1} />
         <span class="text-secondary font-semibold">Pesquisar</span>
-      </Button> 
+      </Button>
     </>
   );
 }

@@ -23,9 +23,10 @@ export interface Props {
 }
 
 export default function ImagemETexto(
-  { link, text, title, image, background, classeCss, imagemAbaixoNoMobile}: Props,
+  { link, text, title, image, background, classeCss, imagemAbaixoNoMobile }:
+    Props,
 ) {
-  const imgordermobile = imagemAbaixoNoMobile === true ? 'mob-order--1' : '';
+  const imgordermobile = imagemAbaixoNoMobile === true ? "mob-order--1" : "";
   return (
     <div
       class={`w-full block-shoppable-banner relative 
@@ -34,34 +35,34 @@ export default function ImagemETexto(
     >
       {(background?.desktop || background?.mobile) && (
         <Picture class="w-full h-full background-image mb-4">
-          {( background?.mobile) && (
+          {(background?.mobile) && (
             <Source
               media="(max-width: 767px)"
               src={background?.mobile}
               width={400}
             />
           )}
-          {( background?.desktop) && (
-          <Source
-            media="(min-width: 768px)"
-            src={background?.desktop}
-            width={1920}
-          />
+          {(background?.desktop) && (
+            <Source
+              media="(min-width: 768px)"
+              src={background?.desktop}
+              width={1920}
+            />
           )}
-          {( background?.desktop) && (
-          <img
-            class="w-full h-full"
-            src={background?.desktop}
-            width={1920}
-            decoding="async"
-            loading="lazy"
-          />
+          {(background?.desktop) && (
+            <img
+              class="w-full h-full"
+              src={background?.desktop}
+              width={1920}
+              decoding="async"
+              loading="lazy"
+            />
           )}
         </Picture>
       )}
 
       <div class="container">
-        <div class="card grid grid-cols-1 lg:grid-cols-2 items-center"> 
+        <div class="card grid grid-cols-1 lg:grid-cols-2 items-center">
           <figure class="relative">
             <Picture>
               <Source
@@ -84,7 +85,7 @@ export default function ImagemETexto(
                 loading="lazy"
               />
             </Picture>
-          </figure> 
+          </figure>
           <div class={`card-content px-4 lg:px-0 ${imgordermobile}`}>
             <div>
               <h2 class="mob-fontsize-32px desk-fontsize-46px font-playfair text-secondary font-bold separador-primary-left">
