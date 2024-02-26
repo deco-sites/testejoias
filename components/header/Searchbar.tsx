@@ -23,7 +23,7 @@ function SearchbarModal({ searchbar }: Props) {
       onClose={() => displaySearchPopup.value = false}
     >
       <div
-        class="absolute top-0 bg-base-100 container"
+        class="absolute top-0 bg-base-100 w-full"
         style={{ marginTop: headerHeight }}
       >
         <Searchbar {...searchbar} />

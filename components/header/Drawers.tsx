@@ -29,11 +29,13 @@ const Aside = (
     children: ComponentChildren;
   },
 ) => (
-  <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]">
+  <div class="bg-white grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]">
     <div class="flex justify-between items-center">
-      <h1 class="px-4 py-3">
-        <span class="font-medium text-2xl">{title}</span>
-      </h1>
+      <h2 class="px-4 py-3">
+        <span class="font-medium text-lg block font-bold text-secondary">
+          {title}
+        </span>
+      </h2>
       {onClose && (
         <Button class="btn btn-ghost" onClick={onClose}>
           <Icon id="XMark" size={24} strokeWidth={2} />
@@ -88,7 +90,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
         onClose={() => displayCart.value = false}
         aside={
           <Aside
-            title="Minha sacola"
+            title="Minha Seleção"
             onClose={() => displayCart.value = false}
           >
             <Cart platform={platform} />

@@ -54,7 +54,7 @@ export default function Benefits(
       <div
         class={`${
           reverse
-            ? "bg-secondary text-secondary-content rounded-md p-4 lg:px-8 lg:py-4"
+            ? "bg-secondary text-secondary-content rounded-md px-4 pb-6 pt-8"
             : ""
         } flex gap-4 ${
           benefitLayout == "piledup" ? "flex-col items-center text-center" : ""
@@ -67,27 +67,68 @@ export default function Benefits(
         }`}
       >
         <div class="flex-none">
-          <Icon
-            id={benefit.icon}
-            class={"text-base-content"}
-            width={36}
-            height={36}
-            strokeWidth={0.01}
-            fill="currentColor"
-          />
+          {benefit.icon === "BeneficiosParcelamento" && (
+            <Icon
+              id={benefit.icon}
+              class={"text-base-content mob-zoom--5"}
+              width={92}
+              height={62}
+              strokeWidth={0.01}
+              fill="currentColor"
+            />
+          )}
+          {benefit.icon === "BeneficiosTroca" && (
+            <Icon
+              id={benefit.icon}
+              class={"text-base-content mob-zoom--5"}
+              width={72}
+              height={78}
+              strokeWidth={0.01}
+              fill="currentColor"
+            />
+          )}
+          {benefit.icon === "BeneficiosFrete" && (
+            <Icon
+              id={benefit.icon}
+              class={"text-base-content mob-zoom--5"}
+              width={145}
+              height={75}
+              strokeWidth={0.01}
+              fill="currentColor"
+            />
+          )}
+          {benefit.icon === "BeneficiosPrimeiraCompra" && (
+            <Icon
+              id={benefit.icon}
+              class={"text-base-content mob-zoom--5"}
+              width={78}
+              height={80}
+              strokeWidth={0.01}
+              fill="currentColor"
+            />
+          )}
+          {benefit.icon !== "BeneficiosParcelamento" &&
+            benefit.icon !== "BeneficiosTroca" &&
+            benefit.icon !== "BeneficiosFrete" &&
+            benefit.icon !== "BeneficiosPrimeiraCompra" && (
+            <Icon
+              id={benefit.icon}
+              class={"text-base-content mob-zoom--5"}
+              width={36}
+              height={36}
+              strokeWidth={0.01}
+              fill="currentColor"
+            />
+          )}
         </div>
-        <div class="flex-auto flex flex-col gap-1 lg:gap-2">
-          <div
-            class={`text-base lg:text-xl leading-7 ${
-              reverse ? "text-base-100" : "text-base-content"
-            }`}
-          >
+        <div class="flex-auto flex flex-col gap-1">
+          <div class="text-accent-content mob-fontsize-14px desk-fontsize-22px font-bold">
             {benefit.label}
           </div>
           <p
-            class={`text-sm leading-5 ${
+            class={`text-xs lg:text-sm ${
               reverse ? "text-base-100" : "text-neutral"
-            } ${benefitLayout == "piledup" ? "hidden lg:block" : ""}`}
+            }`}
           >
             {benefit.description}
           </p>
@@ -101,11 +142,13 @@ export default function Benefits(
       {!layout?.variation || layout?.variation === "Simple"
         ? (
           <div class="w-full container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
-            <Header
-              title={title}
-              description={description}
-              alignment={layout?.headerAlignment || "center"}
-            />
+            {title !== "" && description !== "" && (
+              <Header
+                title={title}
+                description={description}
+                alignment={layout?.headerAlignment || "center"}
+              />
+            )}
             <div class="w-full flex justify-center">
               <div class="flex flex-col gap-4 lg:gap-8 w-full lg:grid grid-flow-col auto-cols-fr">
                 {listOfBenefits}
@@ -116,11 +159,13 @@ export default function Benefits(
         : ""}
       {layout?.variation === "With border" && (
         <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
-          <Header
-            title={title}
-            description={description}
-            alignment={layout?.headerAlignment || "center"}
-          />
+          {title !== "" && description !== "" && (
+            <Header
+              title={title}
+              description={description}
+              alignment={layout?.headerAlignment || "center"}
+            />
+          )}
           <div class="w-full flex justify-center">
             <div class="grid grid-cols-2 gap-4 w-full py-6 px-4 border border-base-300 lg:gap-8 lg:grid-flow-col lg:auto-cols-fr lg:p-10">
               {listOfBenefits}
@@ -130,13 +175,15 @@ export default function Benefits(
       )}
       {layout?.variation === "Color secondary" && (
         <div class="w-full container flex flex-col px-4 py-8 gap-8 lg:gap-10 lg:py-10 lg:px-0">
-          <Header
-            title={title}
-            description={description}
-            alignment={layout?.headerAlignment || "center"}
-          />
+          {title !== " " && description !== " " && (
+            <Header
+              title={title}
+              description={description}
+              alignment={layout?.headerAlignment || "center"}
+            />
+          )}
           <div class="w-full flex justify-center">
-            <div class="grid grid-cols-2 gap-4 w-full lg:gap-8 lg:grid-flow-col lg:auto-cols-fr">
+            <div class="grid grid-cols-2 gap-4 w-full lg:gap-20 lg:grid-flow-col lg:auto-cols-fr">
               {listOfBenefits}
             </div>
           </div>

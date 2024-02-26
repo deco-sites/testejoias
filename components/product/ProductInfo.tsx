@@ -72,8 +72,10 @@ function ProductInfo({ page, layout }: Props) {
     <div class="flex flex-col" id={id}>
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
-        <div> 
-          <span class="text-sm text-base-300 color-[#707070]">CóUni: {productID}</span>
+        <div>
+          <span class="text-sm text-base-300 color-[#707070]">
+            CóUni: {productID}
+          </span>
         </div>
         <h1>
           <span class="font-bold apitalize text-4xl color-[#2B3243] mt-4 block font-playfair">
@@ -86,23 +88,30 @@ function ProductInfo({ page, layout }: Props) {
         </h1>
       </div>
       {/* Prices */}
-      <div class="mt-4">       
+      <div class="mt-4">
         {(listPrice ?? 0) > price && (
           <div class="text-lg text-base-content color-[#707070]">
-            de: <span class="line-through">{formatPrice(listPrice, offers?.priceCurrency)}</span> 
+            de:{" "}
+            <span class="line-through">
+              {formatPrice(listPrice, offers?.priceCurrency)}
+            </span>
           </div>
         )}
-        <div class="fontsize-26px text-base-300 text-secondary font-bold py-1">{installments}</div>
+        <div class="fontsize-26px text-base-300 text-secondary font-bold py-1">
+          {installments}
+        </div>
         {(listPrice ?? 0) > price && (
-          <div class="fontsize-22px text-base-300 color-[#00c9a2]">            
+          <div class="fontsize-22px text-base-300 color-[#00c9a2]">
             {listPrice && price
-            ? `${Math.round(((listPrice - price) / listPrice) * 100)}% de desconto`
-            : ""}
+              ? `${
+                Math.round(((listPrice - price) / listPrice) * 100)
+              }% de desconto`
+              : ""}
           </div>
-         )}
+        )}
         <div class="font-light text-base">
           Ou {formatPrice(price, offers?.priceCurrency)}
-        </div>     
+        </div>
       </div>
       {/* Sku Selector */}
       <div class="mt-4">
@@ -185,7 +194,8 @@ function ProductInfo({ page, layout }: Props) {
           />
         )}
       </div>
-      {/* Description card 
+      {
+        /* Description card
       <div class="mt-4 sm:mt-6">
         <span class="text-sm">
           {description && (
@@ -199,7 +209,8 @@ function ProductInfo({ page, layout }: Props) {
           )}
         </span>
       </div>
-      */}
+      */
+      }
       {/* Analytics Event */}
       <SendEventOnView
         id={id}

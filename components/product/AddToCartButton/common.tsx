@@ -41,7 +41,10 @@ export default function AddToCartButton(props: Props) {
   const btnProps = useAddToCart(props);
 
   return (
-    <Button {...btnProps} class="py-3 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe]">
+    <Button
+      {...btnProps}
+      class="py-3 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe]"
+    >
       Adicionar ao carrinho
     </Button>
   );

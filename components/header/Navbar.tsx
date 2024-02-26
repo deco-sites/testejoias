@@ -61,7 +61,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-3 justify-between items-center border-b border-base-200 w-full px-6 pb-6 gap-2"
+        class="lg:hidden bg-[#FFFFFF] grid grid-cols-3 justify-between items-center w-full px-6 pb-6 gap-2"
       >
         <MenuButton />
         {logo && (
@@ -74,8 +74,8 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 13}
+              width={logo.width || 130}
+              height={logo.height || 41}
             />
           </a>
         )}
@@ -94,42 +94,43 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       {/* Desktop Version */}
       <div class="hidden lg:block w-full bg-white py-3">
         <div class="flex container justify-between items-center">
-          <ul
-            class={`flex gap-8 col-span-1 ${
-              logoPosition === "left" ? "justify-center" : "justify-start"
-            }`}
-          >
-            {primeiraMetadeMenu.map((item) => <NavItem item={item} />)}
-          </ul>
-
-          {logo && (
-            <a
-              href="/"
-              aria-label="Store logo"
-              class="block"
+          <div class="menupricipal flex justify-end items-center">
+            <ul
+              class={`flex gap-x-10 col-span-1 ${
+                logoPosition === "left" ? "justify-center" : "justify-start"
+              }`}
             >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.width || 205}
-                height={logo.height || 64}
-              />
-            </a>
-          )}
+              {primeiraMetadeMenu.map((item) => <NavItem item={item} />)}
+            </ul>
 
-          <ul
-            class={`flex gap-8 col-span-1 ${
-              logoPosition === "left" ? "justify-center" : "justify-start"
-            }`}
-          >
-            {segundaMetadeMenu.map((item) => <NavItem item={item} />)}
-          </ul>
+            {logo && (
+              <a
+                href="/"
+                aria-label="Store logo"
+                class="block mx-10 logo-header"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width || 205}
+                  height={logo.height || 64}
+                />
+              </a>
+            )}
+
+            <ul
+              class={`flex gap-x-10 col-span-1 ${
+                logoPosition === "left" ? "justify-center" : "justify-start"
+              }`}
+            >
+              {segundaMetadeMenu.map((item) => <NavItem item={item} />)}
+            </ul>
+          </div>
 
           <div class="flex-none flex items-center justify-end gap-6 col-span-1">
             {!buttons?.hideSearchButton && (
               <div class="flex items-center text-xs font-thin gap-1">
                 <SearchButton />
-                <span class="text-secondary">Pesquisar</span>
               </div>
             )}
 

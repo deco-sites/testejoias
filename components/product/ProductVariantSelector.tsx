@@ -13,33 +13,35 @@ function VariantSelector({ product }: Props) {
   const possibilities = useVariantPossibilities(hasVariant, product);
 
   return (
-    <><ul class="flex flex-col gap-4">
-      {Object.keys(possibilities).map((name) => (
-        <li class="flex flex-col gap-2">
-          <span class="text-sm">{name}</span>
-          <ul class="flex flex-row gap-3">
-            {Object.entries(possibilities[name]).map(([value, link]) => {
-              const relativeUrl = relative(url);
-              const relativeLink = relative(link);
-              return (
-                <li>
-                  <button f-partial={relativeLink} f-client-nav>
-                    <Avatar
-                      content={value}
-                      variant={relativeLink === relativeUrl
-                        ? "active"
-                        : relativeLink
+    <>
+      <ul class="flex flex-col gap-4">
+        {Object.keys(possibilities).map((name) => (
+          <li class="flex flex-col gap-2">
+            <span class="text-sm">{name}</span>
+            <ul class="flex flex-row gap-3">
+              {Object.entries(possibilities[name]).map(([value, link]) => {
+                const relativeUrl = relative(url);
+                const relativeLink = relative(link);
+                return (
+                  <li>
+                    <button f-partial={relativeLink} f-client-nav>
+                      <Avatar
+                        content={value}
+                        variant={relativeLink === relativeUrl
+                          ? "active"
+                          : relativeLink
                           ? "default"
-                          : "disabled"} />
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-        </li>
-      ))}
-    </ul>
-    <div id="aro">
+                          : "disabled"}
+                      />
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        ))}
+      </ul>
+      <div id="aro">
         <label class="block text-sm text-base-300">Selecionar o aro</label>
         <select class="aros min-height-unset h-auto color-[#707070] outline-none mt-2 py-1 rounded">
           <option value="empty">Medidas</option>
@@ -58,7 +60,8 @@ function VariantSelector({ product }: Props) {
           <option value="24">24</option>
           <option value="25">25</option>
         </select>
-    </div></>
+      </div>
+    </>
   );
 }
 
