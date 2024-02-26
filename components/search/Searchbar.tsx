@@ -75,21 +75,10 @@ function Searchbar({
 
   return (
     <div
-      class="w-full grid gap-8 px-4 py-6 overflow-y-hidden"
+      class="container grid gap-8 px-4 py-6 overflow-y-hidden"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form id={id} action={action} class="join">
-        <Button
-          type="submit"
-          class="join-item btn-square"
-          aria-label="Search"
-          for={id}
-          tabIndex={-1}
-        >
-          {loading.value
-            ? <span class="loading loading-spinner loading-xs" />
-            : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
-        </Button>
         <input
           ref={searchInputRef}
           id="search-input"
@@ -115,6 +104,17 @@ function Searchbar({
           autocomplete="off"
         />
         <Button
+          type="submit"
+          class="join-item btn-square"
+          aria-label="Search"
+          for={id}
+          tabIndex={-1}
+        >
+          {loading.value
+            ? <span class="loading loading-spinner loading-xs" />
+            : <span class="font-size12px font-bold uppercase">Pesquisar</span>}
+        </Button>
+        <Button
           type="button"
           class="join-item btn-ghost btn-square hidden sm:inline-flex"
           onClick={() => displaySearchPopup.value = false}
@@ -127,8 +127,9 @@ function Searchbar({
       <div
         class={`overflow-y-scroll ${!hasProducts && !hasTerms ? "hidden" : ""}`}
       >
-        <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-[150px_1fr]">
-          <div class="flex flex-col gap-6">
+        {/* <div class="gap-4 grid grd-cols-1 sm:grid-rows-1 sm:grid-cols-[150px_1fr]"> */}
+        {
+          /* <div class="flex flex-col gap-6">
             <span
               class="font-medium text-xl"
               role="heading"
@@ -152,32 +153,26 @@ function Searchbar({
                 </li>
               ))}
             </ul>
-          </div>
-          <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
-            <span
-              class="font-medium text-xl"
-              role="heading"
-              aria-level={3}
-            >
-              Produtos sugeridos
-            </span>
-            <Slider class="carousel">
-              {products.map((product, index) => (
-                <Slider.Item
+          </div> */
+        }
+        <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+          <Slider class="carousel">
+            {products.map((product, index) => (
+              <Slider.Item
+                index={index}
+                class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
+              >
+                <ProductCard
+                  product={product}
+                  platform={platform}
                   index={index}
-                  class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
-                >
-                  <ProductCard
-                    product={product}
-                    platform={platform}
-                    index={index}
-                    itemListName="Suggeestions"
-                  />
-                </Slider.Item>
-              ))}
-            </Slider>
-          </div>
+                  itemListName="Suggeestions"
+                />
+              </Slider.Item>
+            ))}
+          </Slider>
         </div>
+        {/* </div> */}
       </div>
     </div>
   );

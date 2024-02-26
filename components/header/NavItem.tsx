@@ -7,11 +7,13 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
   const image = item?.image?.[0];
 
   return (
-    <li class="group flex items-center">
+    <li
+      class={`group flex items-center ${
+        children && children.length > 0 ? "has-children" : ""
+      }`}
+    >
       <a href={url} class="py-6">
-        <span class="fontsize-14px text-secondary font-semibold">
-          {name}
-        </span>
+        <span class="fontsize-14px text-secondary font-semibold">{name}</span>
       </a>
 
       {children && children.length > 0 &&
@@ -23,15 +25,19 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
             <ul class="flex items-start justify-center gap-6">
               {children.map((node) => (
                 <li class="p-6">
-                  <a class="hover:underline" href={node.url}>
-                    <span>{node.name}</span>
+                  <a class="" href={node.url}>
+                    <span class="fontsize-14px text-secondary font-bold">
+                      {node.name}
+                    </span>
                   </a>
 
                   <ul class="flex flex-col gap-1 mt-4">
                     {node.children?.map((leaf) => (
                       <li>
-                        <a class="hover:underline" href={leaf.url}>
-                          <span class="text-xs">{leaf.name}</span>
+                        <a class="" href={leaf.url}>
+                          <span class="fontsize-14px text-secondary">
+                            {leaf.name}
+                          </span>
                         </a>
                       </li>
                     ))}
@@ -41,11 +47,11 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
             </ul>
             {image?.url && (
               <Image
-                class="p-6"
+                class=""
                 src={image.url}
                 alt={image.alternateName}
-                width={300}
-                height={332}
+                width={538}
+                height={420}
                 loading="lazy"
               />
             )}

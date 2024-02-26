@@ -62,16 +62,6 @@ function Cart({
         )
         : (
           <>
-            {/* Free Shipping Bar */}
-            <div class="px-2 py-4 w-full">
-              <FreeShippingProgressBar
-                total={total}
-                locale={locale}
-                currency={currency}
-                target={freeShippingTarget}
-              />
-            </div>
-
             {/* Cart Items */}
             <ul
               role="list"
@@ -92,46 +82,55 @@ function Cart({
             </ul>
 
             {/* Cart Footer */}
-            <footer class="w-full">
+            <footer class="w-full pb-6 pt-4 bg-secondary text-secondary-content">
+              {/* Free Shipping Bar */}
+              <div class="px-2 py-4 w-full">
+                <FreeShippingProgressBar
+                  total={total}
+                  locale={locale}
+                  currency={currency}
+                  target={5000}
+                />
+              </div>
+
               {/* Subtotal */}
-              <div class="border-t border-base-200 py-2 flex flex-col">
+              <div class="px-9 py-2 flex flex-col">
                 {discounts > 0 && (
-                  <div class="flex justify-between items-center px-4">
+                  <div class="flex justify-between items-center px-4 hidden">
                     <span class="text-sm">Descontos</span>
                     <span class="text-sm">
                       {formatPrice(discounts, currency, locale)}
                     </span>
                   </div>
                 )}
-                <div class="w-full flex justify-between px-4 text-sm">
-                  <span>Subtotal</span>
-                  <span>
+                <div class="w-full flex justify-between text-sm">
+                  <span class="font-semibold fontsize-14px">Subtotal</span>
+                  <span class="font-semibold fontsize-14px">
                     {formatPrice(subtotal, currency, locale)}
                   </span>
                 </div>
-                {onAddCoupon && (
-                  <Coupon onAddCoupon={onAddCoupon} coupon={coupon} />
-                )}
+                <div className="hidden cupom">
+                  {onAddCoupon && (
+                    <Coupon onAddCoupon={onAddCoupon} coupon={coupon} />
+                  )}
+                </div>
               </div>
 
               {/* Total */}
-              <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
-                <div class="flex justify-between items-center w-full">
-                  <span>Total</span>
-                  <span class="font-medium text-xl">
+              <div class="px-9 flex flex-col justify-end items-end gap-2">
+                <div class="py-4 flex justify-between items-center w-full">
+                  <span class="font-semibold fontsize-14px">Total</span>
+                  <span class="font-semibold fontsize-14px">
                     {formatPrice(total, currency, locale)}
                   </span>
                 </div>
-                <span class="text-sm text-base-300">
-                  Taxas e fretes serão calculados no checkout
-                </span>
               </div>
 
-              <div class="p-4">
+              <div class="px-9">
                 <a class="inline-block w-full" href={checkoutHref}>
                   <Button
                     data-deco="buy-button"
-                    class="btn-primary btn-block"
+                    class="btn btn-block border-radius-60px py-2 min-height-unset h-auto color-white"
                     disabled={loading || isEmtpy}
                     onClick={() => {
                       sendEvent({
@@ -147,9 +146,12 @@ function Cart({
                       });
                     }}
                   >
-                    Fechar pedido
+                    FINALIZAR COMPRA
                   </Button>
                 </a>
+                <div class="btn bg-transparent btn-block border-radius-60px mt-2 py-2 min-height-unset h-auto color-white">
+                  CONTINUAR COMPRANDO
+                </div>
               </div>
             </footer>
           </>
