@@ -4,6 +4,7 @@
 
 import * as $_app from "./routes/_app.tsx";
 import * as $AddToCartButton_linx from "./islands/AddToCartButton/linx.tsx";
+import * as $AddToCartButton_linxv2 from "./islands/AddToCartButton/linxv2.tsx";
 import * as $AddToCartButton_nuvemshop from "./islands/AddToCartButton/nuvemshop.tsx";
 import * as $AddToCartButton_shopify from "./islands/AddToCartButton/shopify.tsx";
 import * as $AddToCartButton_vnda from "./islands/AddToCartButton/vnda.tsx";
@@ -34,6 +35,7 @@ const manifest = {
   },
   islands: {
     "./islands/AddToCartButton/linx.tsx": $AddToCartButton_linx,
+    "./islands/AddToCartButton/linxv2.tsx": $AddToCartButton_linxv2,
     "./islands/AddToCartButton/nuvemshop.tsx": $AddToCartButton_nuvemshop,
     "./islands/AddToCartButton/shopify.tsx": $AddToCartButton_shopify,
     "./islands/AddToCartButton/vnda.tsx": $AddToCartButton_vnda,
