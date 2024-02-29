@@ -59,8 +59,9 @@ function VariantSelector({ product }: Props) {
           <option value="23">23</option>
           <option value="24">24</option>
           <option value="25">25</option>
-        </select>
+        </select> 
       </div>
+      <span class="modal-medida mt-2 block fontsize-12px color-[#00c9a2] cursor-pointer"><b>Não tem certeza do seu aro?</b> Use nosso Guia de Medidas</span>
     </>
   );
 }

@@ -196,6 +196,11 @@ html::-webkit-scrollbar-thumb{
   right: 0;
   top: 1px;
 }
+
+.fundo-branco{
+  background-color: white;
+}
+
 @media (min-width: 701px){
   .desk-fontsize-22px{
     font-size: 22px;
@@ -248,4 +253,20 @@ select.aros{
 
 .product-gallery .group:disabled .group-disabled\:border-base-300{
   border: 2px solid #B994FE;
+}
+
+.breadcrumbs li:last-child a{
+  color: #B994FE;
+}
+
+input.cep{
+  border: 1px solid #707070;
+  border-radius: 20px 0px 0px 20px;
+  outline: none;
+  height: 29px;  
+} 
+
+button.cep{
+  height: 29px;
+  left: -12px;
 }
