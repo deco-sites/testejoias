@@ -1,5 +1,6 @@
 import { SendEventOnView } from "$store/components/Analytics.tsx";
 import AddToCartButtonLinx from "$store/islands/AddToCartButton/linx.tsx";
+import AddToCartLinx from "$store/islands/AddToCartButton/linxv2.tsx";
 import AddToCartButtonShopify from "$store/islands/AddToCartButton/shopify.tsx";
 import AddToCartButtonVNDA from "$store/islands/AddToCartButton/vnda.tsx";
 import AddToCartButtonVTEX from "$store/islands/AddToCartButton/vtex.tsx";
@@ -150,12 +151,19 @@ function ProductInfo({ page, layout }: Props) {
                 </>
               )}
               {platform === "linx" && (
-                <AddToCartButtonLinx
+                <AddToCartLinx 
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                   productGroupID={productGroupID}
                 />
               )}
+              {platform === "linx" && (
+                <AddToCartButtonLinx
+                  eventParams={{ items: [eventItem] }}
+                  productID={productID}
+                  productGroupID={productGroupID}
+                />
+              )}              
               {platform === "vnda" && (
                 <AddToCartButtonVNDA
                   eventParams={{ items: [eventItem] }}
@@ -182,35 +190,17 @@ function ProductInfo({ page, layout }: Props) {
       </div>
       {/* Shipping Simulation */}
       <div class="mt-8">
-        {platform === "vtex" && (
-          <ShippingSimulation
-            items={[
-              {
-                id: Number(product.sku),
-                quantity: 1,
-                seller: seller,
-              },
-            ]}
-          />
-        )}
+        <ShippingSimulation
+          items={[
+            {
+              id: Number(product.sku),
+              quantity: 1,
+              seller: seller,
+            },
+          ]}
+        />
       </div>
-      {
-        /* Description card
-      <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Descrição</summary>
-              <div
-                class="ml-2 mt-2"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            </details>
-          )}
-        </span>
-      </div>
-      */
-      }
+      
       {/* Analytics Event */}
       <SendEventOnView
         id={id}
