@@ -103,7 +103,7 @@ function ProductCard({
     <a
       href={url && relative(url)}
       aria-label="view product"
-      class="btn btn-block py-2 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe] "
+      class="btn btn-block py-2 min-height-unset h-auto text-white bg-[#00c9a2] rounded-full"
     >
       {l?.basics?.ctaText || "ADICIONAR AO CARRINHO"}
     </a>
@@ -112,7 +112,7 @@ function ProductCard({
   return (
     <div
       id={id}
-      class={`card card-compact group w-full ${
+      class={`card card-compact px-2 box-border group w-full ${
         align === "center" ? "text-center" : "text-start"
       } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
@@ -239,7 +239,7 @@ function ProductCard({
         </figcaption>
       </figure>
       {/* Prices & Name */}
-      <div class="flex-auto flex flex-col p-2 gap-3 lg:gap-2">
+      <div class="flex-auto flex flex-col p-2 gap-3 lg:gap-1">
         {/* SKU Selector */}
         {(!l?.elementsPositions?.skuSelector ||
           l?.elementsPositions?.skuSelector === "Top") && (

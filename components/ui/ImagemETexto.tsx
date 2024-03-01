@@ -19,14 +19,31 @@ export interface Props {
     href?: string;
   };
   imagemAbaixoNoMobile?: boolean;
+  centralizarTituloMobile?: boolean;
+  fonteMenorNoTituloMobile?: boolean;
   classeCss?: string;
 }
 
 export default function ImagemETexto(
-  { link, text, title, image, background, classeCss, imagemAbaixoNoMobile }:
-    Props,
+  {
+    link,
+    text,
+    title,
+    image,
+    background,
+    classeCss,
+    imagemAbaixoNoMobile,
+    centralizarTituloMobile,
+    fonteMenorNoTituloMobile,
+  }: Props,
 ) {
-  const imgordermobile = imagemAbaixoNoMobile === true ? "mob-order--1" : "";
+  const imgordermobile = imagemAbaixoNoMobile === true ? "-order-1 md:order-none" : "";
+  const centrotitulomobile = centralizarTituloMobile === true
+    ? "text-center md:text-left"
+    : "";
+  const menorfontemobile = fonteMenorNoTituloMobile === true
+    ? "text-[32px] leading-9 md:text-[46px] md:leading-[55px]"
+    : "text-[46px]";
   return (
     <div
       class={`w-full block-shoppable-banner relative 
@@ -63,8 +80,8 @@ export default function ImagemETexto(
 
       <div class="container">
         <div class="card grid grid-cols-1 lg:grid-cols-2 items-center">
-          <figure class="relative">
-            <Picture>
+          <figure class="relative p-2">
+            <Picture class="w-full">
               <Source
                 media="(max-width: 767px)"
                 src={image?.mobile}
@@ -76,7 +93,7 @@ export default function ImagemETexto(
                 width={400}
               />
               <img
-                class="max-w-100 w-auto h-auto"
+                class="max-w-full w-full md:w-auto h-auto"
                 sizes="(max-width: 640px) 100vw, 30vw"
                 src={image?.desktop}
                 alt={image?.altText}
@@ -88,8 +105,11 @@ export default function ImagemETexto(
           </figure>
           <div class={`card-content px-4 lg:px-0 ${imgordermobile}`}>
             <div>
-              <h2 class="mob-fontsize-32px desk-fontsize-46px font-playfair text-secondary font-bold separador-primary-left">
+              <h2
+                class={`font-playfair text-secondary font-bold separador-primary-left relative pb-4 mb-6 ${menorfontemobile} ${centrotitulomobile}`}
+              >
                 {title}
+                <small class="absolute bg-secondary h-0.5 w-20 bottom-0 left-0"></small>
               </h2>
               {text && (
                 <div
@@ -99,7 +119,7 @@ export default function ImagemETexto(
               )}
               <div class="mt-4 card-actions">
                 <a
-                  class="btn m-border-radius-60px w-full-mobile py-2 px-8 fontsize-12px min-height-unset h-auto color-white uppercase"
+                  class="btn rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase"
                   href={link?.href}
                 >
                   {link?.text}

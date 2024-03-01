@@ -8,12 +8,12 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
 
   return (
     <li
-      class={`group flex items-center ${
+      class={`group flex items-center relative ${
         children && children.length > 0 ? "has-children" : ""
       }`}
     >
       <a href={url} class="py-6">
-        <span class="fontsize-14px text-secondary font-semibold">{name}</span>
+        <span class="text-sm text-secondary font-semibold">{name}</span>
       </a>
 
       {children && children.length > 0 &&
@@ -26,7 +26,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
               {children.map((node) => (
                 <li class="p-6">
                   <a class="" href={node.url}>
-                    <span class="fontsize-14px text-secondary font-bold">
+                    <span class="text-sm text-secondary font-bold">
                       {node.name}
                     </span>
                   </a>
@@ -35,7 +35,7 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
                     {node.children?.map((leaf) => (
                       <li>
                         <a class="" href={leaf.url}>
-                          <span class="fontsize-14px text-secondary">
+                          <span class="text-sm text-secondary">
                             {leaf.name}
                           </span>
                         </a>

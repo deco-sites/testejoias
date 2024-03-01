@@ -24,22 +24,41 @@ function CartButton({ loading, currency, total, items }: Props) {
   };
 
   return (
-    <div
-      onClick={onClick}
-      class="indicator flex items-center px-4 border border-secondary border-radius-60px"
-    >
-      <Button
-        class="p-1"
-        aria-label="open cart"
-        data-deco={displayCart.value && "open-cart"}
-        loading={loading}
+    <>
+      <div
+        onClick={onClick}
+        class="hidden sm:flex indicator flex items-center px-4 border border-secondary rounded-[60px]"
       >
-        <Icon id="ShoppingCart" size={24} strokeWidth={2} />
-      </Button>
-      <span class="font-semibold fontsize-14px">
-        {totalItems > 99 ? "99+" : totalItems}
-      </span>
-    </div>
+        <Button
+          class="p-1"
+          aria-label="open cart"
+          data-deco={displayCart.value && "open-cart"}
+          loading={loading}
+        >
+          <Icon id="ShoppingCart" size={24} strokeWidth={2} />
+        </Button>
+        <span class="font-semibold text-sm">
+          {totalItems > 99 ? "99+" : totalItems}
+        </span>
+      </div>
+
+      {/* mobile  */}
+      <div
+        onClick={onClick}
+        class="flex sm:hidden indicator flex items-center"
+      >
+        <Button
+          aria-label="open cart"
+          data-deco={displayCart.value && "open-cart"}
+          loading={loading}
+        >
+          <Icon id="ShoppingCart" size={24} strokeWidth={2} />
+        </Button>
+        <span class="font-semibold text-sm">
+          {totalItems > 99 ? "99+" : totalItems}
+        </span>
+      </div>
+    </>
   );
 }
 

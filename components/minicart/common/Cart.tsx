@@ -65,7 +65,7 @@ function Cart({
             {/* Cart Items */}
             <ul
               role="list"
-              class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
+              class="mt-6 px-6 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
             >
               {items.map((item, index) => (
                 <li key={index}>
@@ -84,7 +84,7 @@ function Cart({
             {/* Cart Footer */}
             <footer class="w-full pb-6 pt-4 bg-secondary text-secondary-content">
               {/* Free Shipping Bar */}
-              <div class="px-2 py-4 w-full">
+              <div class="px-6 pb-4 w-full">
                 <FreeShippingProgressBar
                   total={total}
                   locale={locale}
@@ -104,8 +104,8 @@ function Cart({
                   </div>
                 )}
                 <div class="w-full flex justify-between text-sm">
-                  <span class="font-semibold fontsize-14px">Subtotal</span>
-                  <span class="font-semibold fontsize-14px">
+                  <span class="font-semibold text-sm">Subtotal</span>
+                  <span class="font-semibold text-sm">
                     {formatPrice(subtotal, currency, locale)}
                   </span>
                 </div>
@@ -119,8 +119,8 @@ function Cart({
               {/* Total */}
               <div class="px-9 flex flex-col justify-end items-end gap-2">
                 <div class="py-4 flex justify-between items-center w-full">
-                  <span class="font-semibold fontsize-14px">Total</span>
-                  <span class="font-semibold fontsize-14px">
+                  <span class="font-semibold text-sm">Total</span>
+                  <span class="font-semibold text-sm">
                     {formatPrice(total, currency, locale)}
                   </span>
                 </div>
@@ -130,7 +130,7 @@ function Cart({
                 <a class="inline-block w-full" href={checkoutHref}>
                   <Button
                     data-deco="buy-button"
-                    class="btn btn-block border-radius-60px py-2 min-height-unset h-auto color-white"
+                    class="btn btn-block rounded-[60px] py-2 min-height-unset h-auto text-white"
                     disabled={loading || isEmtpy}
                     onClick={() => {
                       sendEvent({
@@ -149,7 +149,7 @@ function Cart({
                     FINALIZAR COMPRA
                   </Button>
                 </a>
-                <div class="btn bg-transparent btn-block border-radius-60px mt-2 py-2 min-height-unset h-auto color-white">
+                <div class="btn bg-transparent btn-block rounded-[60px] mt-2 py-2 min-height-unset h-auto text-white">
                   CONTINUAR COMPRANDO
                 </div>
               </div>

@@ -97,7 +97,7 @@ function ProductInfo({ page, layout }: Props) {
             </span>
           </div>
         )}
-        <div class="fontsize-26px text-base-300 text-secondary font-bold py-1">
+        <div class="text-[26px] text-base-300 text-secondary font-bold py-1">
           {installments}
         </div>
         {(listPrice ?? 0) > price && (

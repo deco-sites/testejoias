@@ -61,33 +61,37 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       {/* Mobile Version */}
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden bg-[#FFFFFF] grid grid-cols-3 justify-between items-center w-full px-6 pb-6 gap-2"
+        class="lg:hidden bg-[#FFFFFF] w-full px-4 gap-2"
       >
-        <MenuButton />
-        {logo && (
-          <a
-            href="/"
-            class="flex-grow inline-flex items-center justify-center"
-            style={{ minHeight: navbarHeight }}
-            aria-label="Store logo"
-          >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 130}
-              height={logo.height || 41}
-            />
-          </a>
-        )}
+        <div class="w-full flex flex-wrap justify-between items-center">
+          <MenuButton />
+          {logo && (
+            <a
+              href="/"
+              class="flex-grow inline-flex items-center justify-center"
+              style={{ minHeight: navbarHeight }}
+              aria-label="Store logo"
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 130}
+                height={logo.height || 41}
+              />
+            </a>
+          )}
 
-        <div class="flex justify-end gap-1">
-          <SearchButton />
-          {platform === "vtex" && <CartButtonVTEX />}
-          {platform === "vnda" && <CartButtonVDNA />}
-          {platform === "wake" && <CartButtonWake />}
-          {platform === "linx" && <CartButtonLinx />}
-          {platform === "shopify" && <CartButtonShopify />}
-          {platform === "nuvemshop" && <CartButtonNuvemshop />}
+          <div class="flex justify-end gap-1">
+            {platform === "vtex" && <CartButtonVTEX />}
+            {platform === "vnda" && <CartButtonVDNA />}
+            {platform === "wake" && <CartButtonWake />}
+            {platform === "linx" && <CartButtonLinx />}
+            {platform === "shopify" && <CartButtonShopify />}
+            {platform === "nuvemshop" && <CartButtonNuvemshop />}
+          </div>
+        </div>
+        <div class="w-full">
+          <Searchbar searchbar={searchbar} />
         </div>
       </div>
 
@@ -96,7 +100,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
         <div class="flex container justify-between items-center">
           <div class="menupricipal flex justify-end items-center">
             <ul
-              class={`flex gap-x-10 col-span-1 ${
+              class={`flex lg:gap-8 2xl:gap-x-10 col-span-1 ${
                 logoPosition === "left" ? "justify-center" : "justify-start"
               }`}
             >
@@ -119,7 +123,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
             )}
 
             <ul
-              class={`flex gap-x-10 col-span-1 ${
+              class={`flex lg:gap-8 2xl:gap-x-10 col-span-1 ${
                 logoPosition === "left" ? "justify-center" : "justify-start"
               }`}
             >

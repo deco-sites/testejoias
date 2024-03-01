@@ -101,7 +101,7 @@ export default function Newsletter(props: Props) {
       )}
       {layout?.content?.alignment === "Side to side" && (
         <div
-          class={`container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
+          class={`hidden container flex flex-col rounded justify-between lg:flex-row p-4 gap-6 lg:p-16 lg:gap-12 ${bgLayout}`}
         >
           <div class="flex justify-center">
             {formLayout}

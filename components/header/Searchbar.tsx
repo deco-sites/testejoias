@@ -17,18 +17,27 @@ function SearchbarModal({ searchbar }: Props) {
   }
 
   return (
-    <Modal
-      loading="lazy"
-      open={displaySearchPopup.value}
-      onClose={() => displaySearchPopup.value = false}
-    >
-      <div
-        class="absolute top-0 bg-base-100 w-full"
-        style={{ marginTop: headerHeight }}
-      >
-        <Searchbar {...searchbar} />
+    <>
+      <div class="hidden md:block">
+        <Modal
+          loading="lazy"
+          open={displaySearchPopup.value}
+          onClose={() => displaySearchPopup.value = false}
+        >
+          <div
+            class="absolute top-0 bg-base-100 w-full"
+            style={{ marginTop: headerHeight }}
+          >
+            <Searchbar {...searchbar} />
+          </div>
+        </Modal>
       </div>
-    </Modal>
+      {
+        /* <div class="block md:hidden">
+        <Searchbar {...searchbar} />
+      </div> */
+      }
+    </>
   );
 }
 

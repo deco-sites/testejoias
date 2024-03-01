@@ -122,7 +122,7 @@ export default function Benefits(
           )}
         </div>
         <div class="flex-auto flex flex-col gap-1">
-          <div class="text-accent-content mob-fontsize-14px desk-fontsize-22px font-bold">
+          <div class="text-accent-content text-sm md:text-[22px] font-bold">
             {benefit.label}
           </div>
           <p

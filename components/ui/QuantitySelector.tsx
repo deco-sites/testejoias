@@ -16,9 +16,9 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
     onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
 
   return (
-    <div class="join border rounded-none w-min">
+    <div class="join border border-primary rounded-md w-min">
       <Button
-        class="btn-square btn-ghost join-item h-w-27px"
+        class="btn-square btn-ghost join-item w-7 h-7"
         onClick={decrement}
         disabled={disabled}
         loading={loading}
@@ -26,7 +26,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
         -
       </Button>
       <input
-        class="input text-center join-item h-w-27px"
+        class="input text-center px-0 join-item w-7 h-7 bg-white"
         type="number"
         inputMode="numeric"
         pattern="[0-9]*"
@@ -39,7 +39,7 @@ function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
         size={3}
       />
       <Button
-        class="btn-square btn-ghost join-item h-w-27px"
+        class="btn-square btn-ghost join-item w-7 h-7"
         onClick={increment}
         disabled={disabled}
         loading={loading}

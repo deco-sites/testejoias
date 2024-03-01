@@ -15,6 +15,7 @@ import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 export type Item = {
   label: string;
   href: string;
+  ocultarNoMobile?: boolean;
 };
 
 export type Section = {
@@ -250,8 +251,13 @@ function Footer({
               </div>
               <Divider />
               <div class="flex flex-col md:flex-row gap-10 md:gap-14 md:items-end">
-                {_payments}
+                <div class="hidden md:block">
+                  {_payments}
+                </div>
                 {_social}
+                <div class="block md:hidden">
+                  {_payments}
+                </div> 
                 <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 lg:items-end">
                   {_apps}
                   {_region}
@@ -267,14 +273,19 @@ function Footer({
           {layout?.variation == "Variation 2" && (
             <div class="flex flex-col gap-10">
               <div class="flex flex-col md:flex-row justify-between">
-                <div class="flex flex-col gap-6 col-custom-footer-1">
+                <div class="flex flex-col gap-6 w-full md:w-1/6">
                   {_logo}
+                  <div class="hidden md:block">
                   {_payments}
+                  </div>
                 </div>
-                <div class="flex flex-col items-center col-custom-footer-2">
-                  <div class="w-full flex items-center justify-between py-6">
+                <div class="flex mt-10 flex-col items-center w-full md:w-9/12">
+                  <div class="w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 py-0 md:py-6">
                     {_links}
                     {_social}
+                    <div class="block md:hidden">
+                    {_payments}
+                    </div>
                   </div>
                   {_sectionLinks}
                 </div>
@@ -363,7 +374,7 @@ function Footer({
 
       <div class="container copyright py-8">
         <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-          <p class="fontsize-12px">{copyright}</p>
+          <p class="px-4 text-xs text-xs text-center md:text-left">{copyright}</p>
           {
             /* {plataformasLogo?.image && (
             <div class="flex flex-col gap-3">
@@ -374,7 +385,7 @@ function Footer({
                 width={260}
                 height={82}
               />
-              <div class="fontsize-12px">
+              <div class="text-xs">
                 {plataformasLogo?.description}
               </div>
             </div>

@@ -126,7 +126,7 @@ function CategoryList(props: Props) {
         alignment={layout.headerAlignment || "center"}
       />
 
-      <Slider class="carousel carousel-start gap-4 lg:gap-6 row-start-2 row-end-5">
+      <Slider class="carousel carousel-start gap-4 lg:gap-6 row-start-2 row-end-5 px-14 md:px-0">
         {list.map((
           { tag, label, description, href, image, buttonText },
           index,

@@ -59,7 +59,7 @@ function CartItem(
 
   return (
     <div
-      class="grid grid-rows-1 gap-2"
+      class="grid grid-rows-1 gap-3 border-b border-colid border-primary py-4"
       style={{
         gridTemplateColumns: "auto 1fr",
       }}
@@ -67,25 +67,25 @@ function CartItem(
       <Image
         {...image}
         src={image.src.replace("55-55", "255-255")}
-        style={{ aspectRatio: "108 / 150" }}
-        width={108}
-        height={150}
+        style={{ aspectRatio: "176 / 176" }}
+        width={176}
+        height={176}
         class="h-full object-contain"
       />
 
       <div class="flex flex-col gap-1">
-        <span class="fontsize-14px">{name}</span>
+        <span class="text-sm">{name}</span>
         <div class="gap-2">
-          <span class="block line-through fontsize-11px">
+          <span class="block line-through text-xs">
             {formatPrice(list, currency, locale)}
           </span>
           <span class="block font-bold fontsize-22px text-secondary">
             {isGift ? "Grátis" : formatPrice(sale, currency, locale)}
           </span>
         </div>
-        <div class="flex justify-between items-center">
-          <div>
-            <small class="fontsize-11px block">Quantidade</small>
+        <div class="grid gap-3 grid-cols-2 justify-between items-center">
+          <div class="flex flex-wrap justify-center">
+            <small class="text-xs block">Quantidade</small>
             <QuantitySelector
               disabled={loading || isGift}
               quantity={quantity}
@@ -106,11 +106,12 @@ function CartItem(
               })}
             />
           </div>
+          <div></div>
         </div>
         <Button
           disabled={loading || isGift}
           loading={loading}
-          class="w-full excluir-carrinho p-1 rounded-md btn-outline btn-error flex items-center justify-center border border-solid text-xs"
+          class="w-full mt-2 excluir-carrinho p-1 rounded-md btn-outline btn-error flex items-center justify-center border border-solid text-xs"
           onClick={withLoading(async () => {
             const analyticsItem = itemToAnalyticsItem(index);
 
