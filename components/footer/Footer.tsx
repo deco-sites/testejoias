@@ -257,7 +257,7 @@ function Footer({
                 {_social}
                 <div class="block md:hidden">
                   {_payments}
-                </div> 
+                </div>
                 <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 lg:items-end">
                   {_apps}
                   {_region}
@@ -276,7 +276,7 @@ function Footer({
                 <div class="flex flex-col gap-6 w-full md:w-1/6">
                   {_logo}
                   <div class="hidden md:block">
-                  {_payments}
+                    {_payments}
                   </div>
                 </div>
                 <div class="flex mt-10 flex-col items-center w-full md:w-9/12">
@@ -284,7 +284,7 @@ function Footer({
                     {_links}
                     {_social}
                     <div class="block md:hidden">
-                    {_payments}
+                      {_payments}
                     </div>
                   </div>
                   {_sectionLinks}
@@ -374,7 +374,9 @@ function Footer({
 
       <div class="container copyright py-8">
         <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-          <p class="px-4 text-xs text-xs text-center md:text-left">{copyright}</p>
+          <p class="px-4 text-xs text-xs text-center md:text-left">
+            {copyright}
+          </p>
           {
             /* {plataformasLogo?.image && (
             <div class="flex flex-col gap-3">

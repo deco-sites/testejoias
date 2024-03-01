@@ -37,7 +37,9 @@ export default function ImagemETexto(
     fonteMenorNoTituloMobile,
   }: Props,
 ) {
-  const imgordermobile = imagemAbaixoNoMobile === true ? "-order-1 md:order-none" : "";
+  const imgordermobile = imagemAbaixoNoMobile === true
+    ? "-order-1 md:order-none"
+    : "";
   const centrotitulomobile = centralizarTituloMobile === true
     ? "text-center md:text-left"
     : "";
@@ -109,7 +111,8 @@ export default function ImagemETexto(
                 class={`font-playfair text-secondary font-bold separador-primary-left relative pb-4 mb-6 ${menorfontemobile} ${centrotitulomobile}`}
               >
                 {title}
-                <small class="absolute bg-secondary h-0.5 w-20 bottom-0 left-0"></small>
+                <small class="absolute bg-secondary h-0.5 w-20 bottom-0 left-0">
+                </small>
               </h2>
               {text && (
                 <div
