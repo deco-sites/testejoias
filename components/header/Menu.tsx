@@ -10,11 +10,11 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
     <div class="collapse collapse-plus">
       <input type="checkbox" />
       <div class="collapse-title">{item.name}</div>
-      <div class="collapse-content">
+      <div class="collapse-content"> 
         <ul>
           <li>
             <a class="underline text-sm" href={item.url}>Ver todos</a>
-          </li>
+          </li> 
           {item.children?.map((node) => (
             <li>
               <MenuItem item={node} />
