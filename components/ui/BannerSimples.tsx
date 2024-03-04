@@ -12,8 +12,8 @@ export interface Props {
   };
   Fullbanner?: boolean;
   action?: {
-    href: string;
-    title: string;
+    href?: string;
+    title?: string;
   };
   margem?: {
     tamanhoDoEspacamento?: "Margem grande" | "Margem pequena";

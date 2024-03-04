@@ -2,6 +2,7 @@ import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
+  /** @description Imagem de fundo do bloco. Não preencher caso não seja necessário. */
   background?: {
     mobile?: ImageWidget;
     desktop?: ImageWidget;
@@ -18,9 +19,16 @@ export interface Props {
     text?: string;
     href?: string;
   };
+  tamanhoDaImagemNoGrid?: "50%" | "30%";
+  /** @title Imagem do lado direito em desktop? */
+  ladoImgDesktop?: boolean;
+  /** @title Imagem abaixo do texto em mobile? */
   imagemAbaixoNoMobile?: boolean;
+  /** @title Centralizar título no mobile? */
   centralizarTituloMobile?: boolean;
+  /** @title Título menor no mobile? */
   fonteMenorNoTituloMobile?: boolean;
+  /** @description Usado para estilização. Não preencher caso não seja necessário. */
   classeCss?: string;
 }
 
@@ -35,25 +43,27 @@ export default function ImagemETexto(
     imagemAbaixoNoMobile,
     centralizarTituloMobile,
     fonteMenorNoTituloMobile,
+    ladoImgDesktop,
+    tamanhoDaImagemNoGrid
   }: Props,
-) {
+) { 
   const imgordermobile = imagemAbaixoNoMobile === true
-    ? "-order-1 md:order-none"
-    : "";
-  const centrotitulomobile = centralizarTituloMobile === true
-    ? "text-center md:text-left"
-    : "";
+    ? "-order-1"
+    : "order-none";
+  const imgorderdesktop = ladoImgDesktop === true
+    ? "md:-order-1"
+    : "md:order-none";
   const menorfontemobile = fonteMenorNoTituloMobile === true
     ? "text-[32px] leading-9 md:text-[46px] md:leading-[55px]"
-    : "text-[46px]";
+    : "text-[46px] leading-[55px]";
   return (
     <div
-      class={`w-full block-shoppable-banner relative 
+      class={`w-full my-6 block-shoppable-banner relative 
         ${classeCss}
     `}
     >
       {(background?.desktop || background?.mobile) && (
-        <Picture class="w-full h-full background-image mb-4">
+        <Picture class="w-full h-full absolute left-0 top-0 mb-4">
           {(background?.mobile) && (
             <Source
               media="(max-width: 767px)"
@@ -80,9 +90,9 @@ export default function ImagemETexto(
         </Picture>
       )}
 
-      <div class="container">
-        <div class="card grid grid-cols-1 lg:grid-cols-2 items-center">
-          <figure class="relative p-2">
+      <div class="container relative">
+        <div class="flex flex-wrap items-center">
+          <figure class={`relative p-2 ${tamanhoDaImagemNoGrid === "50%" || tamanhoDaImagemNoGrid === undefined ? 'w-full md:w-1/2' : ''}  ${tamanhoDaImagemNoGrid === "30%" ? 'w-full md:w-1/3' : ''} `}>
             <Picture class="w-full">
               <Source
                 media="(max-width: 767px)"
@@ -105,14 +115,21 @@ export default function ImagemETexto(
               />
             </Picture>
           </figure>
-          <div class={`card-content px-4 lg:px-0 ${imgordermobile}`}>
-            <div>
+          <div class={`card-content px-4 lg:px-0
+            ${imgordermobile} ${imgorderdesktop}
+            ${tamanhoDaImagemNoGrid === "50%" || tamanhoDaImagemNoGrid === undefined ? 'w-full md:w-1/2' : ''} ${tamanhoDaImagemNoGrid === "30%" ? 'w-full md:w-2/3' : ''}
+            `}>
+            <div class="mx-auto w-full md:w-4/5">
               <h2
-                class={`font-playfair text-secondary font-bold separador-primary-left relative pb-4 mb-6 ${menorfontemobile} ${centrotitulomobile}`}
+                class={`font-playfair text-secondary font-bold separador-primary-left relative pb-4 mb-6 ${menorfontemobile} 
+                ${centralizarTituloMobile === true ? 'text-center md:text-left' : ''}
+                `}
               >
                 {title}
-                <small class="absolute bg-secondary h-0.5 w-20 bottom-0 left-0">
-                </small>
+                <small class={`absolute bg-secondary h-0.5 w-20 bottom-0 left-0
+                  ${centralizarTituloMobile === true ? 'right-0 mx-auto md:mx-0' : ''}
+                  `}
+                  ></small>
               </h2>
               {text && (
                 <div
@@ -134,4 +151,4 @@ export default function ImagemETexto(
       </div>
     </div>
   );
-}
+} 

@@ -101,14 +101,7 @@ select.aros{
 }   
 .font-playfair{
   font-family: "Playfair Display";
-} 
-
-.background-image{
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
+}  
 .card-content .descricao p{
   font-size: 14px;
   margin-bottom: 20px;
@@ -119,7 +112,7 @@ select.aros{
 .menupricipal{
   width: calc(100% - 250px)
 }  
-@media (min-width: 701px){   
+@media (min-width: 768px){   
   .fundo-branco-margem-negativa::before{
     content: "";
     width: 100%;
@@ -129,11 +122,6 @@ select.aros{
     left: 0;
     background-color: white;
     z-index: -1;
-  }
-  .card-content >div{
-    width: 515px;
-    max-width: 100%;
-    margin-left: 50px;
   } 
 }
   

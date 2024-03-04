@@ -114,7 +114,11 @@ function ShippingSimulation({ items }: Props) {
             postalCode.value = e.currentTarget.value;
           }}
         />
-        <Button type="submit" loading={loading.value}  class="join-item btn py-1 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full uppercase cep relative">
+        <Button
+          type="submit"
+          loading={loading.value}
+          class="join-item btn py-1 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full uppercase cep relative"
+        >
           Calcular
         </Button>
       </form>
