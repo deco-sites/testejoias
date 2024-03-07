@@ -25,8 +25,7 @@ export default function FullBanner(
 ) {
   return (
     <div
-      class={`
-      ${Fullbanner == true ? "row" : "container"}  
+      class={`${Fullbanner == true ? "row" : "container px-4 md:px-0"}  
       ${margem?.tamanhoDoEspacamento == "Margem pequena" ? "my-4" : ""}
       ${
         margem?.tamanhoDoEspacamento == "Margem grande"

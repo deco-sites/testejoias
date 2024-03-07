@@ -94,7 +94,9 @@ select.aros{
 }
 
 
-
+.w-\[700px\]{
+  width: 700px;
+}
 
 .min-height-unset{
   min-height: unset;

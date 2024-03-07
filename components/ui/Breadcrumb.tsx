@@ -13,8 +13,8 @@ function Breadcrumb({ itemListElement = [] }: Props) {
         {items
           .filter(({ name, item }) => name && item)
           .map(({ name, item }) => (
-            <li>
-              <a href={item}>{name}</a>
+            <li key={item}>
+              <a href={item} className="text-sm capitalize">{name ? name.toLowerCase() : ''}</a>
             </li>
           ))}
       </ul>

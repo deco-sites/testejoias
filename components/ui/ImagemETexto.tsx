@@ -44,9 +44,9 @@ export default function ImagemETexto(
     centralizarTituloMobile,
     fonteMenorNoTituloMobile,
     ladoImgDesktop,
-    tamanhoDaImagemNoGrid
+    tamanhoDaImagemNoGrid,
   }: Props,
-) { 
+) {
   const imgordermobile = imagemAbaixoNoMobile === true
     ? "-order-1"
     : "order-none";
@@ -92,7 +92,14 @@ export default function ImagemETexto(
 
       <div class="container relative">
         <div class="flex flex-wrap items-center">
-          <figure class={`relative p-2 ${tamanhoDaImagemNoGrid === "50%" || tamanhoDaImagemNoGrid === undefined ? 'w-full md:w-1/2' : ''}  ${tamanhoDaImagemNoGrid === "30%" ? 'w-full md:w-1/3' : ''} `}>
+          <figure
+            class={`relative px-4 lg:px-0 ${
+              tamanhoDaImagemNoGrid === "50%" ||
+                tamanhoDaImagemNoGrid === undefined
+                ? "w-full md:w-1/2"
+                : ""
+            }  ${tamanhoDaImagemNoGrid === "30%" ? "w-full md:w-1/3" : ""} `}
+          >
             <Picture class="w-full">
               <Source
                 media="(max-width: 767px)"
@@ -115,21 +122,38 @@ export default function ImagemETexto(
               />
             </Picture>
           </figure>
-          <div class={`card-content px-4 lg:px-0
+          <div
+            class={`card-content mt-2 md:mt-0 px-4 lg:px-0
             ${imgordermobile} ${imgorderdesktop}
-            ${tamanhoDaImagemNoGrid === "50%" || tamanhoDaImagemNoGrid === undefined ? 'w-full md:w-1/2' : ''} ${tamanhoDaImagemNoGrid === "30%" ? 'w-full md:w-2/3' : ''}
-            `}>
+            ${
+              tamanhoDaImagemNoGrid === "50%" ||
+                tamanhoDaImagemNoGrid === undefined
+                ? "w-full md:w-1/2"
+                : ""
+            } ${tamanhoDaImagemNoGrid === "30%" ? "w-full md:w-2/3" : ""}
+            `}
+          >
             <div class="mx-auto w-full md:w-4/5">
               <h2
                 class={`font-playfair text-secondary font-bold separador-primary-left relative pb-4 mb-6 ${menorfontemobile} 
-                ${centralizarTituloMobile === true ? 'text-center md:text-left' : ''}
+                ${
+                  centralizarTituloMobile === true
+                    ? "text-center md:text-left"
+                    : ""
+                }
                 `}
               >
                 {title}
-                <small class={`absolute bg-secondary h-0.5 w-20 bottom-0 left-0
-                  ${centralizarTituloMobile === true ? 'right-0 mx-auto md:mx-0' : ''}
+                <small
+                  class={`absolute bg-secondary h-0.5 w-20 bottom-0 left-0
+                  ${
+                    centralizarTituloMobile === true
+                      ? "right-0 mx-auto md:mx-0"
+                      : ""
+                  }
                   `}
-                  ></small>
+                >
+                </small>
               </h2>
               {text && (
                 <div
@@ -139,7 +163,7 @@ export default function ImagemETexto(
               )}
               <div class="mt-4 card-actions">
                 <a
-                  class="btn rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase"
+                  class="btn w-full md:w-auto rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase"
                   href={link?.href}
                 >
                   {link?.text}
@@ -151,4 +175,4 @@ export default function ImagemETexto(
       </div>
     </div>
   );
-} 
+}

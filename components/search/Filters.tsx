@@ -24,24 +24,20 @@ function ValueItem(
       rel="nofollow"
       class="flex items-center justify-between w-full"
     >
-      <span class="text-sm">{label.split("/").pop()}</span>
+      <span class="text-white font-semibold text-sm">
+        {label.split("/").pop()}
+      </span>
       {quantity > 0 && (
         <span class="hidden text-sm text-base-300">({quantity})</span>
       )}
-      <div aria-checked={selected} class="checkbox" />
+      <div aria-checked={selected} class="checkbox border-white w-5 h-5 mr-2" />
     </a>
   );
 }
 
 function FilterValues({ key, values }: FilterToggle) {
-  const flexDirection = key === "tamanho" || key === "cor"
-    ? "flex-row"
-    : "flex-col";
-
   return (
-    <ul
-      class={`flex flex-wrap gap-2 max-h-[156px] overflow-y-auto ${flexDirection}`}
-    >
+    <ul class="flex flex-wrap gap-2 max-h-[156px] overflow-y-auto">
       {values.map((item) => {
         const { url, selected, value, quantity } = item;
 
@@ -75,12 +71,12 @@ function FilterValues({ key, values }: FilterToggle) {
 
 function Filters({ filters }: Props) {
   return (
-    <ul class="flex flex-col gap-6 p-4">
+    <ul class="flex flex-col gap-6 py-4">
       {filters
         .filter(isToggle)
         .map((filter) => (
-          <li class="flex flex-col gap-4 bg-secondary texto-content-secondary">
-            <span class="font-bold fontsize-22px font-playfair">
+          <li class="flex flex-col gap-4 bg-secondary texto-content-secondary p-4 rounded-md">
+            <span class="text-white text-[22px] font-playfair">
               {filter.label}
             </span>
             <FilterValues {...filter} />

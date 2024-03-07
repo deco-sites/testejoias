@@ -105,14 +105,17 @@ function ProductCard({
       aria-label="view product"
       class="btn btn-block py-2 min-height-unset h-auto text-white bg-[#00c9a2] rounded-full"
     >
-      {l?.basics?.ctaText || "ADICIONAR AO CARRINHO"}
+      <span class="block md:hidden">{l?.basics?.ctaText || "COMPRAR"}</span>
+      <span class="hidden md:block">
+        {l?.basics?.ctaText || "ADICIONAR AO CARRINHO"}
+      </span>
     </a>
   );
 
   return (
     <div
       id={id}
-      class={`card card-compact px-2 box-border group w-full ${
+      class={`card card-compact pb-4 px-1 box-border group w-full ${
         align === "center" ? "text-center" : "text-start"
       } ${l?.onMouseOver?.showCardShadow ? "lg:hover:card-bordered" : ""}
         ${
@@ -190,14 +193,14 @@ function ProductCard({
         <a
           href={url && relative(url)}
           aria-label="view product"
-          class="grid grid-cols-1 grid-rows-1 w-full"
+          class="grid grid-cols-1 grid-rows-1 w-full lg:min-h-[265px]"
         >
           <Image
             src={front.url!}
             alt={front.alternateName}
             width={WIDTH}
             height={HEIGHT}
-            class={`bg-base-100 col-span-full row-span-full rounded w-full ${
+            class={`bg-base-100 col-span-full row-span-full rounded object-cover h-full w-full ${
               l?.onMouseOver?.image == "Zoom image"
                 ? "duration-100 transition-scale scale-100 lg:group-hover:scale-125"
                 : ""
@@ -265,7 +268,7 @@ function ProductCard({
             ""
           )
           : (
-            <div class="flex flex-col gap-0">
+            <div class="flex flex-col min-h-[60px] justify-center gap-0 mb-2 pb-2 border-b border-primary border-solid">
               {l?.hide?.productName
                 ? (
                   ""
