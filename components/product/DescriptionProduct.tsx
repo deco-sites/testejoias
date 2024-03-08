@@ -5,19 +5,25 @@ interface Props {
 }
 
 function DescriptionProduct({ product }: Props) {
-  
-  const description = product?.product?.isVariantOf?.description; 
- 
+  const description = product?.product?.isVariantOf?.description;
+
   return (
     <div class="mt-4 sm:mt-6 description fundo-branco py-12">
       <div class="container">
         {description && (
-          <><span class="fontsize-16px text-secondary font-semibold">Descrição</span><div class="mt-2" dangerouslySetInnerHTML={{ __html: description }} /></>
+          <>
+            <span class="fontsize-16px text-secondary font-semibold">
+              Descrição
+            </span>
+            <div
+              class="mt-2"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          </>
         )}
-      </div>      
-    </div> 
+      </div>
+    </div>
   );
-} 
+}
 
 export default DescriptionProduct;
- 

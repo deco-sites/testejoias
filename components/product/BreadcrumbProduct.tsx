@@ -5,7 +5,6 @@ interface Props {
 }
 
 function BreadcrumbProduct({ product }: Props) {
-
   return (
     <div class="py-6 container">
       <div class="breadcrumbs">
@@ -18,7 +17,7 @@ function BreadcrumbProduct({ product }: Props) {
               <li class="fontsize-12px">
                 <a href={dado.item}>{dado.name}</a>
               </li>
-            ); 
+            );
           })}
         </ul>
       </div>

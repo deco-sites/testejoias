@@ -151,7 +151,7 @@ function ProductInfo({ page, layout }: Props) {
                 </>
               )}
               {platform === "linx" && (
-                <AddToCartLinx 
+                <AddToCartLinx
                   eventParams={{ items: [eventItem] }}
                   productID={productID}
                   productGroupID={productGroupID}
@@ -163,7 +163,7 @@ function ProductInfo({ page, layout }: Props) {
                   productID={productID}
                   productGroupID={productGroupID}
                 />
-              )}              
+              )}
               {platform === "vnda" && (
                 <AddToCartButtonVNDA
                   eventParams={{ items: [eventItem] }}
@@ -200,7 +200,7 @@ function ProductInfo({ page, layout }: Props) {
           ]}
         />
       </div>
-      
+
       {/* Analytics Event */}
       <SendEventOnView
         id={id}

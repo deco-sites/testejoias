@@ -8,6 +8,8 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Layout {
   /**
@@ -23,6 +25,11 @@ export interface Layout {
 export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
+  bannerPropaganda?: {
+    ImagemDesktop?: ImageWidget;
+    ImagemMobile?: ImageWidget;
+    Alt?: string;
+  };
   layout?: Layout;
   cardLayout?: CardLayout;
 
@@ -40,6 +47,7 @@ function NotFound() {
 
 function Result({
   page,
+  bannerPropaganda,
   layout,
   cardLayout,
   startingPage = 0,
@@ -51,53 +59,83 @@ function Result({
 
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
-
   return (
     <>
       <div class="container px-4 sm:py-10">
-        <SearchControls
-          sortOptions={sortOptions}
-          filters={filters}
-          breadcrumb={breadcrumb}
-          displayFilter={layout?.variant === "drawer"}
-        />
-
         <div class="flex flex-row gap-20">
           {layout?.variant === "aside" && filters.length > 0 && (
-            <aside class="hidden sm:block w-min min-w-[250px]">
+            <aside class="hidden sm:block w-min min-w-72">
+              <p>
+                <span class="text-secondary text-2xl font-playfair font-semibold">
+                  Filtrar
+                </span>
+              </p>
               <Filters filters={filters} />
             </aside>
           )}
-          <div class="flex-grow" id={id}>
+          <div class="mt-2 md:mt-12 flex-grow" id={id}>
+            {bannerPropaganda && (
+              <Picture>
+                <Source
+                  media="(max-width: 768px)"
+                  src={bannerPropaganda.ImagemMobile
+                    ? bannerPropaganda.ImagemMobile
+                    : ""}
+                  width={400}
+                />
+                <Source
+                  media="(min-width: 768px)"
+                  src={bannerPropaganda.ImagemDesktop
+                    ? bannerPropaganda.ImagemDesktop
+                    : ""}
+                  width={1200}
+                />
+                <img
+                  src={bannerPropaganda.ImagemDesktop
+                    ? bannerPropaganda.ImagemDesktop
+                    : ""}
+                  class="w-full h-auto rounded-md"
+                  width={1200}
+                  decoding="async"
+                  loading="lazy"
+                />
+              </Picture>
+            )}
+            <SearchControls
+              sortOptions={sortOptions}
+              filters={filters}
+              breadcrumb={breadcrumb}
+              displayFilter={layout?.variant === "drawer"}
+            />
             <ProductGallery
               products={products}
               offset={offset}
               layout={{ card: cardLayout, columns: layout?.columns }}
             />
-          </div>
-        </div>
 
-        <div class="flex justify-center my-4">
-          <div class="join">
-            <a
-              aria-label="previous page link"
-              rel="prev"
-              href={pageInfo.previousPage ?? "#"}
-              class="btn btn-ghost join-item"
-            >
-              <Icon id="ChevronLeft" size={24} strokeWidth={2} />
-            </a>
-            <span class="btn btn-ghost join-item">
-              Page {zeroIndexedOffsetPage + 1}
-            </span>
-            <a
-              aria-label="next page link"
-              rel="next"
-              href={pageInfo.nextPage ?? "#"}
-              class="btn btn-ghost join-item"
-            >
-              <Icon id="ChevronRight" size={24} strokeWidth={2} />
-            </a>
+            <div class="flex justify-center my-4">
+              <div class="join">
+                <a
+                  aria-label="previous page link"
+                  rel="prev"
+                  href={pageInfo.previousPage ?? "#"}
+                  class="btn btn-ghost join-item"
+                >
+                  <Icon id="ChevronLeft" size={24} strokeWidth={2} />
+                </a>
+                <span class="btn btn-ghost join-item">
+                  {zeroIndexedOffsetPage + 1}
+                </span>
+                <a
+                  aria-label="next page link"
+                  rel="next"
+                  href={pageInfo.nextPage ?? "#"}
+                  class="btn btn-ghost join-item"
+                >
+                  <Icon id="ChevronRight" size={24} strokeWidth={2} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

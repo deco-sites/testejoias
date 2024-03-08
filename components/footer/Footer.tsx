@@ -279,7 +279,7 @@ function Footer({
                     {_payments}
                   </div>
                 </div>
-                <div class="flex mt-10 flex-col items-center w-full md:w-9/12">
+                <div class="flex mt-10 md:mt-0 flex-col items-center w-full md:w-9/12">
                   <div class="w-full flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 py-0 md:py-6">
                     {_links}
                     {_social}

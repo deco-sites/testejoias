@@ -25,30 +25,42 @@ function SearchControls(
       onClose={() => open.value = false}
       aside={
         <>
-          <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
+          <div class="bg-secondary flex flex-col h-full divide-y overflow-y-hidden">
             <div class="flex justify-between items-center">
-              <h1 class="px-4 py-3">
-                <span class="font-medium text-2xl">Filtrar</span>
-              </h1>
+              <h2 class="px-4 py-3">
+                <span class="font-medium text-2xl text-white md:text-primary">
+                  Filtrar
+                </span>
+              </h2>
               <Button class="btn btn-ghost" onClick={() => open.value = false}>
-                <Icon id="XMark" size={24} strokeWidth={2} />
+                <Icon id="XMark" class="invert" size={24} strokeWidth={2} />
               </Button>
             </div>
             <div class="flex-grow overflow-auto">
               <Filters filters={filters} />
             </div>
+            <div class="grid grid-cols-2 gap-2 p-4">
+              <button class="btn btn-block rounded-[60px] py-2 min-height-unset h-auto text-white bg-transparent border-white">
+                Limpar
+              </button>
+              <button class="btn btn-block rounded-[60px] py-2 min-height-unset h-auto text-white">
+                Aplicar
+              </button>
+            </div>
           </div>
         </>
       }
     >
-      <div class="flex flex-col justify-between mb-4 p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] sm:border-b sm:border-base-200">
-        <div class="flex flex-row items-center sm:p-0 mb-2">
+      <div class="flex flex-col justify-between mb-4 p-4 md:my-4 sm:p-0 sm:gap-4 sm:flex-row">
+        <div class="flex flex-row items-center sm:p-0">
           <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
         </div>
 
-        <div class="flex flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
+        <div class="flex flex-row items-center justify-between gap-2 sm:gap-4 sm:border-none">
           <Button
-            class={displayFilter ? "btn-ghost" : "btn-ghost sm:hidden"}
+            class={displayFilter
+              ? "text-xs btn bg-transparent btn-block rounded-[60px] py-2 text-success w-1/2 min-height-unset h-auto"
+              : "text-xs btn bg-transparent btn-block rounded-[60px] py-2 text-success w-1/2 min-height-unset h-auto sm:hidden"}
             onClick={() => {
               open.value = true;
             }}
