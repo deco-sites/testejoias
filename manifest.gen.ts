@@ -73,10 +73,11 @@ const manifest = {
   },
   "sections": {
     "deco-sites/testejoias/sections/Animation/Animation.tsx": $$$$$$0,
-    "deco-sites/testejoias/sections/Cards/IconCardsCarousel.tsx": $$$$$$1,
+    "deco-sites/testejoias/sections/Cards/CardCustomizado.tsx": $$$$$$1,
+    "deco-sites/testejoias/sections/Cards/IconCardsCarousel.tsx": $$$$$$2,
     "deco-sites/testejoias/sections/Cards/IconCardsCarouselWithImage.tsx":
-      $$$$$$2,
-    "deco-sites/testejoias/sections/Cards/ImageCardsCarousel.tsx": $$$$$$3,
+      $$$$$$3,
+    "deco-sites/testejoias/sections/Cards/ImageCardsCarousel.tsx": $$$$$$4,
     "deco-sites/testejoias/sections/Cards/ImageCardsCarouselWithImage.tsx":
       $$$$$$4,
     "deco-sites/testejoias/sections/Category/CategoryBanner.tsx": $$$$$$5,
