@@ -30,15 +30,18 @@ export default function Pilar(
     benefits = [{
       icon: "Missao",
       label: "Missão",
-      description: "Nossa missão é inspirar e encantar, oferecendo joias e relógios de excepcional qualidade, simbolizando momentos inesquecíveis na vida de nossos clientes. Buscamos proporcionar experiências únicas, pautadas na confiança, inovação e excelência no atendimento.",
+      description:
+        "Nossa missão é inspirar e encantar, oferecendo joias e relógios de excepcional qualidade, simbolizando momentos inesquecíveis na vida de nossos clientes. Buscamos proporcionar experiências únicas, pautadas na confiança, inovação e excelência no atendimento.",
     }, {
       icon: "Visao",
       label: "Visão",
-      description: "Vislumbramos ser a marca de referência mundial em joias e relógios, reconhecida não apenas pela beleza de nossas peças, mas também pela autenticidade e compromisso com a satisfação de nossos clientes.",
+      description:
+        "Vislumbramos ser a marca de referência mundial em joias e relógios, reconhecida não apenas pela beleza de nossas peças, mas também pela autenticidade e compromisso com a satisfação de nossos clientes.",
     }, {
       icon: "Valores",
       label: "Valores",
-      description: "O Joias VIP é orientado por valores fundamentais, que incluem Integridade, Confiança, Inovação, Excelência, Paixão pelo Cliente e Compromisso com o Crescimento Sustentável. Esses princípios guiam todas as nossas ações, desde a construção da confiança até a busca pela excelência.",
+      description:
+        "O Joias VIP é orientado por valores fundamentais, que incluem Integridade, Confiança, Inovação, Excelência, Paixão pelo Cliente e Compromisso com o Crescimento Sustentável. Esses princípios guiam todas as nossas ações, desde a construção da confiança até a busca pela excelência.",
     }],
     layout,
   } = props;
@@ -114,7 +117,8 @@ export default function Pilar(
             {benefit.label}
           </div>
           <p
-            class={`text-xs lg:text-sm text-neutral text-center color-[#707070]`}>
+            class={`text-xs lg:text-sm text-neutral text-center color-[#707070]`}
+          >
             {benefit.description}
           </p>
         </div>

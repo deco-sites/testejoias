@@ -58,7 +58,7 @@ export default function ImagemETexto(
     : "text-[46px] leading-[55px]";
   return (
     <div
-      class={`w-full my-6 block-shoppable-banner relative 
+      class={`w-full my-8 block-shoppable-banner relative 
         ${classeCss}
     `}
     >
@@ -93,7 +93,7 @@ export default function ImagemETexto(
       <div class="container relative">
         <div class="flex flex-wrap items-center">
           <figure
-            class={`relative px-4 lg:px-0 ${
+            class={`relative px-4 md:px-0 ${
               tamanhoDaImagemNoGrid === "50%" ||
                 tamanhoDaImagemNoGrid === undefined
                 ? "w-full md:w-1/2"
@@ -123,7 +123,7 @@ export default function ImagemETexto(
             </Picture>
           </figure>
           <div
-            class={`card-content mt-2 md:mt-0 px-4 lg:px-0
+            class={`card-content px-4 md:px-0
             ${imgordermobile} ${imgorderdesktop}
             ${
               tamanhoDaImagemNoGrid === "50%" ||
@@ -135,7 +135,7 @@ export default function ImagemETexto(
           >
             <div class="mx-auto w-full md:w-4/5">
               <h2
-                class={`font-playfair text-secondary font-bold separador-primary-left relative pb-4 mb-6 ${menorfontemobile} 
+                class={`font-playfair text-secondary font-bold separador-primary-left relative pb-4 mb-4 ${menorfontemobile} 
                 ${
                   centralizarTituloMobile === true
                     ? "text-center md:text-left"
@@ -161,14 +161,16 @@ export default function ImagemETexto(
                   dangerouslySetInnerHTML={{ __html: text }}
                 />
               )}
-              <div class="mt-4 card-actions">
-                <a
-                  class="btn w-full md:w-auto rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase"
-                  href={link?.href}
-                >
-                  {link?.text}
-                </a>
-              </div>
+              {link && (
+                <div class="mt-4 card-actions">
+                  <a
+                    class="btn w-full md:w-auto rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase"
+                    href={link?.href}
+                  >
+                    {link?.text}
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
