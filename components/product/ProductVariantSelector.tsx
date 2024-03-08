@@ -11,8 +11,9 @@ function VariantSelector({ product }: Props) {
   const { url, isVariantOf, additionalProperty } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
-  const displayAro =!! additionalProperty?.find(prop => prop.name === "SelecionarAro" && prop.value === "true");
-
+  const displayAro = !!additionalProperty?.find((prop) =>
+    prop.name === "SelecionarAro" && prop.value === "true"
+  );
 
   return (
     <>
