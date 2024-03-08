@@ -60,6 +60,13 @@ export type AvailableIcons =
   | "Aura"
   | "Boleto"
   | "PagaLeve"
+  | "Valores"
+  | "Visao"
+  | "Missao"
+  | "Posvenda"
+  | "Pedido"
+  | "Qualidade"
+  | "Seguranca"
   | "PagarMe";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
