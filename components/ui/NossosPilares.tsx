@@ -23,32 +23,10 @@ export default function Pilar(
   props: Props,
 ) {
   const {
-<<<<<<< HEAD
     title = "",
     description = "",
     benefits = [],
     classeCss
-=======
-    title = "Pilares",
-    description = "Pilares",
-    benefits = [{
-      icon: "Missao",
-      label: "Missão",
-      description:
-        "Nossa missão é inspirar e encantar, oferecendo joias e relógios de excepcional qualidade, simbolizando momentos inesquecíveis na vida de nossos clientes. Buscamos proporcionar experiências únicas, pautadas na confiança, inovação e excelência no atendimento.",
-    }, {
-      icon: "Visao",
-      label: "Visão",
-      description:
-        "Vislumbramos ser a marca de referência mundial em joias e relógios, reconhecida não apenas pela beleza de nossas peças, mas também pela autenticidade e compromisso com a satisfação de nossos clientes.",
-    }, {
-      icon: "Valores",
-      label: "Valores",
-      description:
-        "O Joias VIP é orientado por valores fundamentais, que incluem Integridade, Confiança, Inovação, Excelência, Paixão pelo Cliente e Compromisso com o Crescimento Sustentável. Esses princípios guiam todas as nossas ações, desde a construção da confiança até a busca pela excelência.",
-    }],
-    layout,
->>>>>>> 3545019ba3d39c5497199fdcba1dc86c51c00419
   } = props;
 
   const listOfBenefits = benefits.map((benefit) => {
