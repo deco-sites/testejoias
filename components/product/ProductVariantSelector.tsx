@@ -8,9 +8,11 @@ interface Props {
 }
 
 function VariantSelector({ product }: Props) {
-  const { url, isVariantOf } = product;
+  const { url, isVariantOf, additionalProperty } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
+  const displayAro =!! additionalProperty?.find(prop => prop.name === "SelecionarAro" && prop.value === "true");
+
 
   return (
     <>
@@ -42,6 +44,8 @@ function VariantSelector({ product }: Props) {
         ))}
       </ul>
       <div id="aro">
+        {displayAro}
+        testeee
         <label class="block text-sm text-base-300">Selecionar o aro</label>
         <select class="aros min-height-unset h-auto color-[#707070] outline-none mt-2 py-1 rounded">
           <option value="empty">Medidas</option>

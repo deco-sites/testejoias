@@ -43,7 +43,7 @@ export default function AddToCartButton(props: Props) {
   return (
     <Button
       {...btnProps}
-      class="btn py-2 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe] uppercase"
+      class="btn py-2 min-height-unset h-auto bg-[#00c9a2] rounded-full hover:bg-[#b994fe] uppercase text-white"
     >
       Comprar 
     </Button>

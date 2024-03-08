@@ -3,7 +3,7 @@ import { useId } from "$store/sdk/useId.ts";
 
 const animationClasses = {
   "fade-in": "animate-fade-in",
-  "fade-in-bottom": "animate-fade-in-bottom",
+  "fade-in-bottom": "animate-fade-in-bottom", 
   "slide-left": "animate-slide-left",
   "slide-right": "animate-slide-right",
   "zoom-in": "animate-zoom-in",
