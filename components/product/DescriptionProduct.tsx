@@ -17,7 +17,7 @@ function DescriptionProduct({ product }: Props) {
             </span>
             <div
               class="mt-2"
-              dangerouslySetInnerHTML={{ __html: description }}
+              dangerouslySetInnerHTML={{ __html: description }} 
             />
           </>
         )}

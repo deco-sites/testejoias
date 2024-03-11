@@ -53,22 +53,25 @@
   to {
     --dot-progress: 100%
   }
-} 
+}
 
-.drawer-end .drawer-toggle~.drawer-side{
+.drawer-end .drawer-toggle~.drawer-side {
   overflow-x: hidden;
 }
-html::-webkit-scrollbar-track{
+
+html::-webkit-scrollbar-track {
   background-color: #ffffff;
 }
-html::-webkit-scrollbar{
+
+html::-webkit-scrollbar {
   width: 12px;
   background: #b894fc;
 }
-html::-webkit-scrollbar-thumb{
+
+html::-webkit-scrollbar-thumb {
   background: #b894fc;
   border-radius: 2px;
-}   
+}
 
 .color-\[\#00c9a2\] {
   color: #00c9a2;
@@ -82,40 +85,58 @@ html::-webkit-scrollbar-thumb{
   color: #2B3243;
 }
 
-select.aros{
+select.aros {
   border: 1px solid #707070;
   min-width: 160px;
   background: transparent;
   cursor: pointer;
 }
 
-.product-gallery .group:disabled .group-disabled\:border-base-300{
+.product-gallery .group:disabled .group-disabled\:border-base-300 {
   border: 2px solid #B994FE;
 }
 
+input.cep {
+  border: 1px solid #707070;
+  font-size: 13px;
+  padding: 0px 10px;
+}
 
-.w-\[700px\]{
+button.cep {
+  left: -28px;
+  padding: 5px 15px;
+  top: 1px;
+}
+
+
+.w-\[700px\] {
   width: 700px;
 }
 
-.min-height-unset{
+.min-height-unset {
   min-height: unset;
-}   
-.font-playfair{
+}
+
+.font-playfair {
   font-family: "Playfair Display";
-}  
-.card-content .descricao p{
+}
+
+.card-content .descricao p,
+.conteudo-produto .descricao p{
   font-size: 14px;
   margin-bottom: 20px;
-} 
+}
+
 .excluir-carrinho svg {
   margin-right: 5px;
 }
-.menupricipal{
+
+.menupricipal {
   width: calc(100% - 250px)
-}  
-@media (min-width: 768px){   
-  .fundo-branco-margem-negativa::before{
+}
+
+@media (min-width: 768px) {
+  .fundo-branco-margem-negativa::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -124,44 +145,60 @@ select.aros{
     left: 0;
     background-color: white;
     z-index: -1;
-  } 
+  }
 }
-  
 
-.bg-success{
+
+.bg-success {
   background-color: oklch(var(--btn-color, var(--b2)) / var(--tw-bg-opacity));
-} 
-.overflow-y-auto::-webkit-scrollbar-track, .carousel::-webkit-scrollbar-track{
+}
+
+.overflow-y-auto::-webkit-scrollbar-track,
+.carousel::-webkit-scrollbar-track {
   background-color: #ffffff;
 }
-.overflow-y-auto::-webkit-scrollbar,.carousel::-webkit-scrollbar{
+
+.overflow-y-auto::-webkit-scrollbar,
+.carousel::-webkit-scrollbar {
   width: 4px;
   background: #707070;
 }
-.overflow-y-auto::-webkit-scrollbar-thumb,.carousel::-webkit-scrollbar-thumb{
+
+.overflow-y-auto::-webkit-scrollbar-thumb,
+.carousel::-webkit-scrollbar-thumb {
   background: #707070;
   border-radius: 2px;
-}   
-.section-video iframe{
+}
+
+.section-video iframe {
   width: 100%;
   border-radius: 36px;
-  height: 600px; 
+  height: 600px;
 }
-.collapse-arrow > .collapse-title:after{
+
+.collapse-arrow>.collapse-title:after {
   top: 10px;
 }
-@media (max-width: 639px){
-  .section-video iframe{ 
-    height: 220px; 
+
+.fundo-branco{
+  background: white;
+}
+
+@media (max-width: 639px) {
+  .section-video iframe {
+    height: 220px;
     border-radius: 16px;
-  }  
-  .mob-zoom--5{
+  }
+
+  .mob-zoom--5 {
     zoom: .5;
-  }  
-  .mob-zoom--7{
+  }
+
+  .mob-zoom--7 {
     zoom: .7;
-  }  
-  .mob-zoom-1-2{
+  }
+
+  .mob-zoom-1-2 {
     zoom: 1.2;
-  }   
+  }
 }

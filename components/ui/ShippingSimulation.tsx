@@ -105,7 +105,7 @@ function ShippingSimulation({ items }: Props) {
         <input
           as="input"
           type="text"
-          class="input input-bordered join-item w-52 min-height-unset h-auto py-1 fontsize-14px cep"
+          class="input input-bordered join-item w-52 min-height-unset h-auto py-1 fontsize-14px cep rounded-3xl"
           placeholder="Seu cep aqui"
           value={postalCode.value}
           maxLength={8}
@@ -117,7 +117,7 @@ function ShippingSimulation({ items }: Props) {
         <Button
           type="submit"
           loading={loading.value}
-          class="join-item btn py-1 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full uppercase cep relative"
+          class="join-item btn py-1 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full uppercase cep relative text-white"
         >
           Calcular
         </Button>

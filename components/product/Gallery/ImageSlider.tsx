@@ -83,7 +83,7 @@ export default function GallerySlider(props: Props) {
         ))}
       </ul>
 
-      <SliderJS rootId={id} />
+      <SliderJS rootId={id} class="hidden" />
     </div>
   );
 }

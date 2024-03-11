@@ -75,7 +75,7 @@ function ProductInfo({ page, layout }: Props) {
       <div class="mt-4 sm:mt-8">
         <div>
           <span class="text-sm text-base-300 color-[#707070]">
-            CóUni: {productID}
+            CódUni: {productID}
           </span>
         </div>
         <h1>
