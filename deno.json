@@ -3,7 +3,7 @@
     "deco-sites/testejoias/": "./",
     "$store/": "./",
     "deco/": "https://denopkg.com/deco-cx/deco@1.54.1/",
-    "apps/": "https://denopkg.com/deco-cx/apps@b6293886da406af35543e3605e3716b4d53e03c2/",
+    "apps/": "https://denopkg.com/deco-cx/apps@8f1b16e440a8ab424ac7db9c3dd6c11d80012375/",
     "$fresh/": "https://deno.land/x/fresh@1.6.3/",
     "preact": "https://esm.sh/preact@10.19.2",
     "preact/": "https://esm.sh/preact@10.19.2/",

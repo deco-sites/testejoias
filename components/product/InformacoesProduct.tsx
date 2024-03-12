@@ -17,9 +17,8 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
     prop.name === "AtendimentoPersonalizado" && prop.value === "true" || prop.value === "Sim"
   );
 
-
   return (
-    <div class="mt-4 sm:mt-6 informacoes py-12">
+    <div class="mt-4 sm:mt-6 informacoes">
 
       <div class="flex items-center">
         <div>

@@ -8,7 +8,7 @@ function DescriptionProduct({ product }: Props) {
   const description = product?.product?.isVariantOf?.description;
 
   return (
-    <div class="mt-4 sm:mt-6 description fundo-branco py-12">
+    <div class="description fundo-branco py-12">
       <div class="container">
         {description && (
           <>
