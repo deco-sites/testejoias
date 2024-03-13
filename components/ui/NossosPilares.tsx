@@ -32,7 +32,7 @@ export default function Pilar(
   const listOfBenefits = benefits.map((benefit) => {
     return (
       <div
-        class={`gap-4 rounded-2xl border lg:py-3 lg:px-6 badge-accent bg-transparent `}
+        class={`gap-4 rounded-2xl border lg:py-3 lg:px-6 badge-accent bg-transparent pt-8 pb-6 px-4`}
       >
         <div class="justify-center flex">
           <Icon
@@ -60,7 +60,7 @@ export default function Pilar(
 
   return (
     <div
-      class={`w-full container px-4 py-8 flex flex-col gap-8 lg:gap-2 lg:py-6 lg:px-0 ${
+      class={`container max-w-full px-4 py-8 flex flex-col gap-8 lg:gap-2 lg:py-6 lg:px-0 ${
         classeCss ? classeCss : ""
       }`}
     >
@@ -70,7 +70,7 @@ export default function Pilar(
         />
       )}
       <div class="w-full flex justify-center">
-        <div class="px-4 py-8 flex gap-8 lg:gap-10 lg:py-10 lg:px-0 max-w-full mx-auto">
+        <div class="grid grid-cols-1 gap-4 w-full lg:gap-10 lg:grid-flow-col lg:auto-cols-fr">
           {listOfBenefits}
         </div>
       </div>
