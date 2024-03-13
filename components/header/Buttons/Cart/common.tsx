@@ -43,6 +43,9 @@ function CartButton({ loading, currency, total, items }: Props) {
       </div>
 
       {/* mobile  */}
+      <a href="/login">        
+        <Icon id="TopMinhaConta" width={12} height={15} strokeWidth={2} />
+      </a>
       <div
         onClick={onClick}
         class="flex sm:hidden indicator flex items-center"

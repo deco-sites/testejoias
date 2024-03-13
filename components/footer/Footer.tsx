@@ -10,7 +10,7 @@ import RegionSelector from "$store/components/footer/RegionSelector.tsx";
 import Social from "$store/components/footer/Social.tsx";
 import Newsletter from "$store/islands/Newsletter.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
+import Image from "apps/website/components/Image.tsx"; 
 
 export type Item = {
   label: string;
@@ -23,13 +23,12 @@ export type Section = {
   items: Item[];
 };
 
-// export type plataformasLogo = {
-//   label?: string;
-//   logo?: {
-//     image: ImageWidget;
-//     alt?: string;
-//   };
-// };
+export type plataformasLogo = {
+  label?: string; 
+  image: ImageWidget;
+  alt?: string;
+  href?: string; 
+};
 
 export interface SocialItem {
   label:
@@ -132,7 +131,7 @@ export interface Props {
   };
   layout?: Layout;
   copyright?: string;
-  // plataformasLogo?: plataformasLogo[];
+  plataformasLogo?: plataformasLogo[];
 }
 
 function Footer({
@@ -203,7 +202,7 @@ function Footer({
     },
   },
   copyright,
-  // plataformasLogo,
+  plataformasLogo,
 }: Props) {
   const _logo = layout?.hide?.logo ? <></> : <Logo logo={logo} />;
   const _newsletter = layout?.hide?.newsletter ? <></> : (
@@ -271,6 +270,8 @@ function Footer({
             </div>
           )}
           {layout?.variation == "Variation 2" && (
+            <>
+            {_newsletter}
             <div class="flex flex-col gap-10">
               <div class="flex flex-col md:flex-row justify-between">
                 <div class="flex flex-col gap-6 w-full md:w-1/6">
@@ -291,6 +292,7 @@ function Footer({
                 </div>
               </div>
             </div>
+            </>
           )}
           {layout?.variation == "Variation 3" && (
             <div class="flex flex-col gap-10">
@@ -373,26 +375,22 @@ function Footer({
       </div>
 
       <div class="container copyright py-8">
-        <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
-          <p class="px-4 text-xs text-xs text-center md:text-left">
+        <div class="flex flex-col md:flex-row md:justify-between gap-4 md:gap-10">
+          <p class="w-full md:w-2/3 px-4 text-xs text-xs text-center md:text-left">
             {copyright}
-          </p>
-          {
-            /* {plataformasLogo?.image && (
-            <div class="flex flex-col gap-3">
-              <img
+          </p> 
+          <div class="w-full md:w-1/3 flex items-center justify-center md:justify-end gap-6">
+          {plataformasLogo.map((plataforma) => (
+            <a href={plataforma.href} target="_blank">
+              <Image 
+                src={plataforma?.image}
+                alt={plataforma?.alt}
+                width={77} 
                 loading="lazy"
-                src={plataformasLogo?.image}
-                alt={plataformasLogo?.description}
-                width={260}
-                height={82}
-              />
-              <div class="text-xs">
-                {plataformasLogo?.description}
-              </div>
-            </div>
-          )} */
-          }
+              /> 
+            </a>
+          ))} 
+          </div>
         </div>
       </div>
       {layout?.hide?.backToTheTop

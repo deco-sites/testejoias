@@ -60,7 +60,7 @@ export default function TituloETexto({ content,espacamentoDaLinha,espacamentoDaL
     <>
     <div className={`container px-4 md:px-0 md:py-${espacamentoLinha} md:grid grid-cols-${quantidadeItens} gap-8`}>
       {content.map((item, index) => ( 
-        <div className={`py-${espacamentoLinhaMob} md:py-0`}>
+        <div className={`py-${espacamentoLinhaMob} md:py-${espacamentoLinha}`}>
           <item.tagHtmlDoTitulo className={
             `font-playfair text-secondary font-bold
             ${item.centralizarTitulo === true ? "text-center" : ""} 

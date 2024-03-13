@@ -131,7 +131,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
             </ul>
           </div>
 
-          <div class="flex-none flex items-center justify-end gap-6 col-span-1">
+          <div class="flex-none flex items-center justify-end gap-4 col-span-1">
             {!buttons?.hideSearchButton && (
               <div class="flex items-center text-xs font-thin gap-1">
                 <SearchButton />

@@ -6,6 +6,8 @@ import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
+import LinksDoTopo from "$store/components/header/LinksDoTopo.tsx";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
 export interface Logo {
   src: ImageWidget;
@@ -20,8 +22,16 @@ export interface Buttons {
   hideCartButton?: boolean;
 }
 
+export interface LinksTopo {
+  label: string;
+  href: string; 
+  icon?: AvailableIcons; 
+}
+
 export interface Props {
   alerts?: string[];
+
+  LinksTopo: LinksTopo[]; 
 
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;
@@ -42,6 +52,7 @@ export interface Props {
 
 function Header({
   alerts,
+  LinksTopo,
   searchbar,
   navItems = [
     {
@@ -87,7 +98,16 @@ function Header({
           platform={platform}
         >
           <div class="fixed w-full z-50">
-            {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
+            <div class="bg-secondary">
+              <div class="container flex gap-6">
+                {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
+                <div class="hidden md:block w-1/3">
+                  <LinksDoTopo 
+                    content={LinksTopo}
+                  />
+                </div>
+              </div>
+            </div>
             <Navbar
               items={items}
               searchbar={searchbar && { ...searchbar, platform }}
