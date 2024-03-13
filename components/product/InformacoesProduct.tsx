@@ -13,23 +13,42 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
 
   const { additionalProperty } = product?.product;
 
+  console.log('testeee', additionalProperty)
+
   const displayAtendimento = !!additionalProperty?.find((prop) =>
     prop.name === "AtendimentoPersonalizado" && prop.value === "true" || prop.value === "Sim"
   );
+
 
   return (
     <div class="mt-4 sm:mt-6 informacoes">
 
       <div class="flex items-center">
-        <div>
-          <img src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4348/24eac7ee-088c-4d4b-95a9-d8fa28d21dac"></img>
-        </div>
-        <div>
-          <img src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4348/d09df860-e9b5-4e4f-89a8-f29b57064432"></img>
-        </div>
-        <div>
-          <img src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4348/f5db2c4d-f7de-4749-aaac-0ba79740aaa6"></img>
-        </div>
+        {additionalProperty.map((item) => {
+          {
+            if (item.name === "Bloc1Imagem1") {
+              return (
+                <div>
+                  <img src={item.value}></img>
+                </div>
+              )
+            }
+            if (item.name === "Bloc1Imagem2") {
+              return (
+                <div>
+                  <img src={item.value}></img>
+                </div>
+              )
+            }
+            if (item.name === "Bloc1Imagem3") {
+              return (
+                <div>
+                  <img src={item.value}></img>
+                </div>
+              )
+            }
+          }
+        })}
       </div>
 
       <div class="conteudo-produto flex items-center">
@@ -81,6 +100,10 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
                   dangerouslySetInnerHTML={{ __html: textAtendimento }}
                 />
               )}
+              <div class="mt-4 card-actions">
+                <a class="btn w-full md:w-auto rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase">Saiba Mais</a>
+                <a class="btn w-full md:w-auto rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase">Saiba Mais</a>
+              </div>
             </div>
           </div>
           {imageAtendimento && (
@@ -97,7 +120,7 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
       )}
 
     </div>
-    
+
   );
 }
 

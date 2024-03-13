@@ -14,6 +14,7 @@ function VariantSelector({ product }: Props) {
   const displayAro = !!additionalProperty?.find((prop) =>
     prop.name === "SelecionarAro" && prop.value === "true" || prop.value === "Sim"
   );
+
   
   return (
     <>
