@@ -2,7 +2,8 @@ import BotaoTopoPadrao from "$store/components/topoPadraoPaginas/BotaoTopoPadrao
 
 export type BotaoTopoPadrao = {
   label: string;
-  href: string;
+  href: string; 
+  abrirEmNovaAba?: boolean;
   corDoBotao?:
     | "Success"
     | "Transparent Success";

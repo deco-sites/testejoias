@@ -1,24 +1,26 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
 
+export type BotoesImgTxt = {
+  label: string;
+  href: string;
+  /** @title Abrir link em nova aba? */
+  abrirEmNovaAba?: boolean;
+  corDoBotao?:
+    | "Success"
+    | "Transparent Success";
+};
+
 export interface Props {
-  /** @description Imagem de fundo do bloco. Não preencher caso não seja necessário. */
-  background?: {
-    mobile?: ImageWidget;
-    desktop?: ImageWidget;
-  };
   image: {
     mobile: ImageWidget;
     desktop: ImageWidget;
     altText?: string;
-  };
+  }; 
+  title?: string;
   /** @format html */
   text?: string;
-  title?: string;
-  link?: {
-    text?: string;
-    href?: string;
-  };
+  botoes?: BotoesImgTxt[];   
   tamanhoDaImagemNoGrid?: "50%" | "30%";
   /** @title Imagem do lado direito em desktop? */
   ladoImgDesktop?: boolean;
@@ -28,13 +30,18 @@ export interface Props {
   centralizarTituloMobile?: boolean;
   /** @title Título menor no mobile? */
   fonteMenorNoTituloMobile?: boolean;
+  /** @description Imagem de fundo do bloco. Não preencher caso não seja necessário. */
+  background?: {
+    mobile?: ImageWidget;
+    desktop?: ImageWidget;
+  };
   /** @description Usado para estilização. Não preencher caso não seja necessário. */
   classeCss?: string;
-}
+} 
 
 export default function ImagemETexto(
-  {
-    link,
+  { 
+    botoes,
     text,
     title,
     image,
@@ -46,7 +53,7 @@ export default function ImagemETexto(
     ladoImgDesktop,
     tamanhoDaImagemNoGrid,
   }: Props,
-) {
+) { 
   const imgordermobile = imagemAbaixoNoMobile === true
     ? "-order-1"
     : "order-none";
@@ -142,8 +149,10 @@ export default function ImagemETexto(
                     : ""
                 }
                 `}
-              >
-                {title}
+              > 
+                <span 
+                  dangerouslySetInnerHTML={{ __html: title }}
+                />
                 <small
                   class={`absolute bg-secondary h-0.5 w-20 bottom-0 left-0
                   ${
@@ -161,7 +170,22 @@ export default function ImagemETexto(
                   dangerouslySetInnerHTML={{ __html: text }}
                 />
               )}
-              {link && (
+              {botoes && botoes.length > 0 && (
+                <div class="flex flex-row mt-4 gap-3">
+                  {botoes.map((item) => (
+                     <a
+                      class={`font-bold text-xs
+                      ${getCorDoBotaoClass(item.corDoBotao)}`}
+                      href={item.href}
+                      target={item.abrirEmNovaAba ? "_blank" : ""}
+                      rel={item.abrirEmNovaAba ? "noopener noreferrer" : ""}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+              {/* {link && (
                 <div class="mt-4 card-actions">
                   <a
                     class="btn w-full md:w-auto rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase"
@@ -170,7 +194,7 @@ export default function ImagemETexto(
                     {link?.text}
                   </a>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         </div>
@@ -178,3 +202,16 @@ export default function ImagemETexto(
     </div>
   );
 }
+ 
+function getCorDoBotaoClass(
+  corDoBotao?: BotoesImgTxt["corDoBotao"],
+): string {
+  switch (corDoBotao) {
+    case "Success":
+      return "btn py-2 min-height-unset text-white h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe] uppercase";
+    case "Transparent Success":
+      return "btn py-2 min-height-unset h-auto rounded-full hover:bg-[#b994fe] uppercase color-[#00c9a2] btn-outline";
+    default:
+      return "btn py-2 min-height-unset text-white h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe] uppercase";
+  }
+} 

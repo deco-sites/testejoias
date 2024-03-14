@@ -1,6 +1,7 @@
 export type BotaoTopoPadrao = {
   label: string;
   href: string;
+  abrirEmNovaAba?: boolean;
   corDoBotao?:
     | "Success"
     | "Transparent Success";
@@ -15,13 +16,16 @@ export default function BtnsTopoPadrao(
     <>
       {content && content.length > 0 && (
         <div class="flex flex-row justify-center mt-6 gap-3">
-          {content.map((item) => (
+          {content.map((item) => ( 
             <a
-              class={`font-bold text-sm ${
-                getTamanhoFonteClass(item.tamanhoFonte)
-              } ${getCorDoBotaoClass(item.corDoBotao)}`}
+              class={`font-bold text-sm 
+              ${getTamanhoFonteClass(item.tamanhoFonte)}
+              ${getCorDoBotaoClass(item.corDoBotao)}
+              `}
               href={item.href}
-            >
+              target={item.abrirEmNovaAba ? "_blank" : ""}
+              rel={item.abrirEmNovaAba ? "noopener noreferrer" : ""}
+            > 
               {item.label}
             </a>
           ))}
