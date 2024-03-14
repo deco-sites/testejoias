@@ -49,7 +49,7 @@ export default function GallerySlider(props: Props) {
               class="carousel-item w-full"
             >
               <Image
-                class="w-full rounded-3xl"
+                class="w-full rounded-3xl px-4"
                 sizes="(max-width: 640px) 100vw, 40vw"
                 style={{ aspectRatio }}
                 src={img.url!}
@@ -66,7 +66,7 @@ export default function GallerySlider(props: Props) {
       </div>
 
       {/* Dots */}
-      <ul class="carousel carousel-center gap-2 px-4 sm:px-0 sm:flex-col order-2 sm:order-1">
+      <ul class="carousel carousel-center gap-2 sm:px-0 sm:flex-col order-2 sm:order-1 px-4">
         {images.map((img, index) => (
           <li class="carousel-item min-w-[63px] sm:min-w-[100px]">
             <Slider.Dot index={index}>

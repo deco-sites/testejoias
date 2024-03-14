@@ -13,7 +13,6 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
 
   const { additionalProperty } = product?.product;
 
-  console.log('testeee', additionalProperty)
 
   const displayAtendimento = !!additionalProperty?.find((prop) =>
     prop.name === "AtendimentoPersonalizado" && prop.value === "true" || prop.value === "Sim"
@@ -22,8 +21,8 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
 
   return (
     <div class="mt-4 sm:mt-6 informacoes">
-
-      <div class="flex items-center">
+ 
+      <div class="flex items-center flex-wrap lg:flex-nowrap  md:flex-nowrap">
         {additionalProperty.map((item) => {
           {
             if (item.name === "Bloc1Imagem1") {
@@ -51,21 +50,21 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
         })}
       </div>
 
-      <div class="conteudo-produto flex items-center">
-        <div class="md:w-1/2">
-          <img src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4348/01a15c85-3034-49a5-a34f-b1a287a13756"></img>
-        </div>
-        <div class="text md:w-1/2">
+      <div class="conteudo-produto flex items-center flex-wrap lg:flex-nowrap  md:flex-nowrap">
+      <div class="text md:w-1/2 px-4 py-10 sm:order-2"> 
           <div class="content mx-auto w-full md:w-4/5 descricao color-[#707070]">
             <p>Este é apenas um exemplo de texto e você pode alterá-lo para atender às suas necessidades.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt quam nec eros semper, vel scelerisque quam ultricies. Donec aliquam eros ac quam ultricies, nec scelerisque lorem semper. Quisque scelerisque mauris et leo tincidunt, sed semper lectus scelerisque. Ut ultricies enim a mauris semper, non luctus felis semper.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt quam nec eros semper, vel scelerisque quam ultricies. Donec aliquam eros ac quam ultricies, nec scelerisque lorem semper. Quisque scelerisque mauris et leo tincidunt, sed semper lectus scelerisque. Ut ultricies enim a mauris semper, non luctus felis semper.</p>
-          </div>
+          </div> 
+        </div>
+        <div class="md:w-1/2 sm:order-1">
+          <img src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/4348/01a15c85-3034-49a5-a34f-b1a287a13756"></img>
         </div>
       </div>
 
-      <div class="conteudo-produto flex items-center">
-        <div class="text md:w-1/2">
+      <div class="conteudo-produto flex items-center flex-wrap lg:flex-nowrap  md:flex-nowrap">
+        <div class="text md:w-1/2 px-4 py-10">
           <div class="content mx-auto w-full md:w-4/5 descricao color-[#707070]">
             <p>Este é apenas um exemplo de texto e você pode alterá-lo para atender às suas necessidades.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt quam nec eros semper, vel scelerisque quam ultricies. Donec aliquam eros ac quam ultricies, nec scelerisque lorem semper. Quisque scelerisque mauris et leo tincidunt, sed semper lectus scelerisque. Ut ultricies enim a mauris semper, non luctus felis semper.</p>
@@ -90,8 +89,8 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
       })}
 
       {displayAtendimento === true && (
-        <div class="conteudo-produto flex items-center">
-          <div class="text md:w-1/2">
+        <div class="conteudo-produto flex items-center flex-wrap lg:flex-nowrap  md:flex-nowrap">
+          <div class="text md:w-1/2 px-4 py-10">
             <div class="content mx-auto w-full md:w-4/5">
               <h3 class="font-playfair text-secondary font-bold separador-primary-left relative pb-4 mb-4 text-[46px] leading-[55px] text-center md:text-left">Personal Shopper<br></br>atendimento personalizado</h3>
               {textAtendimento && (

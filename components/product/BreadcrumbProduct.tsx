@@ -6,7 +6,7 @@ interface Props {
 
 function BreadcrumbProduct({ product }: Props) {
   return (
-    <div class="py-6 container">
+    <div class="py-6 container px-4">
       <div class="breadcrumbs">
         <ul>
           <li class="fontsize-12px">

@@ -70,7 +70,7 @@ function ProductInfo({ page, layout }: Props) {
   });
 
   return (
-    <div class="flex flex-col" id={id}>
+    <div class="flex flex-col px-4" id={id}>
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
