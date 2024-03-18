@@ -380,7 +380,7 @@ function Footer({
             {copyright}
           </p> 
           <div class="w-full md:w-1/3 flex items-center justify-center md:justify-end gap-6">
-          {plataformasLogo.map((plataforma) => (
+          {plataformasLogo !== undefined && plataformasLogo.map((plataforma) => (
             <a href={plataforma.href} target="_blank">
               <Image 
                 src={plataforma?.image}

@@ -150,9 +150,11 @@ export default function ImagemETexto(
                 }
                 `}
               > 
-                <span 
-                  dangerouslySetInnerHTML={{ __html: title }}
-                />
+                {title && (
+                  <span 
+                    dangerouslySetInnerHTML={{ __html: title }}
+                  /> 
+                )}
                 <small
                   class={`absolute bg-secondary h-0.5 w-20 bottom-0 left-0
                   ${
@@ -171,7 +173,7 @@ export default function ImagemETexto(
                 />
               )}
               {botoes && botoes.length > 0 && (
-                <div class="flex flex-row mt-4 gap-3">
+                <div class="flex flex-row my-4 gap-3">
                   {botoes.map((item) => (
                      <a
                       class={`font-bold text-xs
@@ -184,17 +186,7 @@ export default function ImagemETexto(
                     </a>
                   ))}
                 </div>
-              )}
-              {/* {link && (
-                <div class="mt-4 card-actions">
-                  <a
-                    class="btn w-full md:w-auto rounded-[60px] w-full-mobile py-2 px-8 text-xs min-height-unset h-auto text-white uppercase"
-                    href={link?.href}
-                  >
-                    {link?.text}
-                  </a>
-                </div>
-              )} */}
+              )} 
             </div>
           </div>
         </div>
