@@ -200,10 +200,10 @@ function getCorDoBotaoClass(
 ): string {
   switch (corDoBotao) {
     case "Success":
-      return "btn py-2 min-height-unset text-white h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe] uppercase";
+      return "btn py-2 min-height-unset text-white h-auto color-white bg-success rounded-full  uppercase";
     case "Transparent Success":
-      return "btn py-2 min-height-unset h-auto rounded-full hover:bg-[#b994fe] uppercase color-[#00c9a2] btn-outline";
+      return "btn py-2 min-height-unset h-auto rounded-full  uppercase color-[#00c9a2] btn-outline";
     default:
-      return "btn py-2 min-height-unset text-white h-auto color-white bg-[#00c9a2] rounded-full hover:bg-[#b994fe] uppercase";
+      return "btn py-2 min-height-unset text-white h-auto color-white bg-success rounded-full  uppercase";
   }
 } 

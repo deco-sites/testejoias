@@ -32,6 +32,7 @@ export type AvailableIcons =
   | "MapPin"
   | "MagnifyingGlass"
   | "Message"
+  | "NewsletterIc"
   | "Phone"
   | "Plus"
   | "QuestionMarkCircle"

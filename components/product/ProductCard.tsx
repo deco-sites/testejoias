@@ -103,7 +103,7 @@ function ProductCard({
     <a
       href={url && relative(url)}
       aria-label="view product"
-      class="btn btn-block py-2 min-height-unset h-auto text-white bg-[#00c9a2] rounded-full"
+      class="btn btn-block py-2 min-height-unset h-auto text-white bg-success rounded-full"
     >
       <span class="block md:hidden">{l?.basics?.ctaText || "COMPRAR"}</span>
       <span class="hidden md:block">

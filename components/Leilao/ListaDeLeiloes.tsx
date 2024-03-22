@@ -173,23 +173,27 @@ export default function ListaDeLeiloes({produtos,topo,bannerPropaganda}:Props,) 
                     <div className="w-full">
                         {produtos.map((it, index) => (
                             <div class="card-leilao flex content-center items-center md:bg-white rounded-lg my-4 md:p-6"> 
-                                <Picture preload class="w-[45%] md:w-80">
-                                    <Source
-                                    src={it.ProductImage} 
-                                    width={175}
-                                    height={175} 
-                                    media="(max-width: 767px)"
-                                    />
-                                    <Source
-                                    src={it.ProductImage} 
-                                    width={320}
-                                    height={320}
-                                    media="(min-width: 767px)"
-                                    />
-                                    <img src={topo.imagemDeFundo} alt={topo.titulo} class="rounded-lg w-full"/>
-                                </Picture> 
+                                <a href={`/leilao/${it.ProductAuctionID}`} class="w-[45%] md:w-80">
+                                    <Picture preload class="w-[45%] md:w-80">
+                                        <Source
+                                        src={it.ProductImage} 
+                                        width={175}
+                                        height={175} 
+                                        media="(max-width: 767px)"
+                                        />
+                                        <Source
+                                        src={it.ProductImage} 
+                                        width={320}
+                                        height={320}
+                                        media="(min-width: 767px)"
+                                        />
+                                        <img src={topo.imagemDeFundo} alt={topo.titulo} class="rounded-lg w-full"/>
+                                    </Picture> 
+                                </a>
                                 <div class="w-[55%] md:w-auto pl-4">
-                                    <h2 class="font-bold text-sm leading-[14px] md:text-[22px] md:leading-6 mb-4">{it.Name}</h2>
+                                    <a href={`/leilao/${it.ProductAuctionID}`} class="w-[45%] md:w-80">
+                                        <h2 class="font-bold text-sm leading-[14px] md:text-[22px] md:leading-6 mb-4">{it.Name}</h2>
+                                    </a>
                                     <div class="grid grid-row md:flex md:border-b border-primary border-solid pb-2 mb-2">
                                         <div class="flex mb-2 md:mb-0 items-center relative after:text-primary after:text-xl after:top-1.5 md:after:content-['|'] after:absolute after:right-0 pr-3 mr-2">
                                             <Icon size={25} id="TagPreco" />

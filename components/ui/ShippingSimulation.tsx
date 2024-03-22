@@ -117,7 +117,7 @@ function ShippingSimulation({ items }: Props) {
         <Button
           type="submit"
           loading={loading.value}
-          class="join-item btn py-1 min-height-unset h-auto color-white bg-[#00c9a2] rounded-full uppercase cep relative text-white"
+          class="join-item btn py-1 min-height-unset h-auto color-white bg-success rounded-full uppercase cep relative text-white"
         >
           Calcular
         </Button>
