@@ -60,7 +60,7 @@ export default function Pilar(
 
   return (
     <div
-      class={`container max-w-full px-4 py-8 flex flex-col gap-8 lg:gap-2 lg:py-6 lg:px-0 ${
+      class={`container px-4 py-8 flex flex-col gap-8 lg:gap-2 lg:py-6 lg:px-0 ${
         classeCss ? classeCss : ""
       }`}
     >

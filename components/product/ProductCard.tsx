@@ -282,16 +282,6 @@ function ProductCard({
                     }}
                   />
                 )}
-              {l?.hide?.productDescription
-                ? (
-                  ""
-                )
-                : (
-                  <div
-                    class="truncate text-sm lg:text-sm text-neutral"
-                    dangerouslySetInnerHTML={{ __html: description ?? "" }}
-                  />
-                )}
             </div>
           )}
         {l?.hide?.allPrices

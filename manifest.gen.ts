@@ -63,7 +63,7 @@ import * as $$$$$$53 from "./sections/Product/BreadcrumbProduct.tsx";
 import * as $$$$$$54 from "./sections/Product/DescriptionProduct.tsx";
 import * as $$$$$$55 from "./sections/Product/ImageGalleryFrontBack.tsx";
 import * as $$$$$$56 from "./sections/Product/ImageGallerySlider.tsx";
-import * as $$$$$$57 from "./sections/Product/InformacoesProduct.tsx";
+import * as $$$$$$57 from "./sections/Product/InformacoesJoias.tsx";
 import * as $$$$$$58 from "./sections/Product/NotFound.tsx";
 import * as $$$$$$59 from "./sections/Product/NotFoundChallenge.tsx";
 import * as $$$$$$60 from "./sections/Product/ProductInfo.tsx";
@@ -143,7 +143,7 @@ const manifest = {
     "deco-sites/testejoias/sections/Product/ImageGalleryFrontBack.tsx":
       $$$$$$55,
     "deco-sites/testejoias/sections/Product/ImageGallerySlider.tsx": $$$$$$56,
-    "deco-sites/testejoias/sections/Product/InformacoesProduct.tsx": $$$$$$57,
+    "deco-sites/testejoias/sections/Product/InformacoesJoias.tsx": $$$$$$57,
     "deco-sites/testejoias/sections/Product/NotFound.tsx": $$$$$$58,
     "deco-sites/testejoias/sections/Product/NotFoundChallenge.tsx": $$$$$$59,
     "deco-sites/testejoias/sections/Product/ProductInfo.tsx": $$$$$$60,

@@ -24,14 +24,14 @@ export interface Buttons {
 
 export interface LinksTopo {
   label: string;
-  href: string; 
-  icon?: AvailableIcons; 
+  href: string;
+  icon?: AvailableIcons;
 }
 
 export interface Props {
   alerts?: string[];
 
-  LinksTopo: LinksTopo[]; 
+  LinksTopo: LinksTopo[];
 
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;
@@ -48,6 +48,8 @@ export interface Props {
   logoPosition?: "left" | "center";
 
   buttons?: Buttons;
+
+  linkWhats: "https://web.whatsapp.com/send?phone=5541988161686&text=Ol%C3%A1+Joias+Vip!";
 }
 
 function Header({
@@ -85,6 +87,7 @@ function Header({
   },
   logoPosition = "center",
   buttons,
+  linkWhats,
 }: Props) {
   const platform = usePlatform();
   const items = navItems ?? [];
@@ -102,7 +105,7 @@ function Header({
               <div class="container flex gap-6">
                 {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
                 <div class="hidden md:block w-1/3">
-                  <LinksDoTopo 
+                  <LinksDoTopo
                     content={LinksTopo}
                   />
                 </div>
@@ -117,8 +120,13 @@ function Header({
             />
           </div>
         </Drawers>
-      </header>
-    </>
+        <div class="whats-flutuante fixed bottom-6 right-6 z-20">
+          <a href={linkWhats} target="blank">
+            <Icon width={72} height={72} id="WhatsappVerde" />
+          </a>
+        </div>
+      </header> 
+    </> 
   );
 }
 

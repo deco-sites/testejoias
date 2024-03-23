@@ -1,9 +1,9 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import type { Product } from "apps/commerce/types.ts";
+import { ProductDetailsPage } from "apps/commerce/types.ts";
 
 interface Props {
-  product: Product;
+  product: ProductDetailsPage | null;
   imageAtendimento?: ImageWidget;
   /** @format html */
   textAtendimento?: string;
@@ -11,14 +11,16 @@ interface Props {
 
 function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Props) {
 
+  if (product === null) {
+    throw new Error("Missing Product Details Page Info");
+  }
+
   const { additionalProperty } = product?.product;
- 
 
   const displayAtendimento = !!additionalProperty?.find((prop) =>
     prop.name === "AtendimentoPersonalizado" && prop.value === "true" || prop.value === "Sim"
   );
-
-
+  
   return (
     <div class="mt-4 sm:mt-6 informacoes">
 
@@ -122,7 +124,7 @@ function DescriptionProduct({ textAtendimento, imageAtendimento, product }: Prop
                 <Image
                   src={imageAtendimento}
                   loading="lazy"
-                />
+                /> 
               </figure>
             </div>
           )}

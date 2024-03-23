@@ -17,7 +17,7 @@ function Header(props: Props) {
       {props.title || props.description
         ? (
           <div
-            class={`flex flex-col gap-2 px-4 lg:px-0 ${
+            class={`flex flex-col relative gap-2 px-4 lg:px-0 ${
               props.alignment === "left" ? "text-left" : "text-center"
             }`}
           >
@@ -29,9 +29,9 @@ function Header(props: Props) {
               )}
             {props.description &&
               (
-                <h3 class="text-primary text-sm separador-primary">
+                <><h3 class="text-primary text-sm separador-primary pb-2">
                   {props.description}
-                </h3>
+                </h3><small class="absolute bg-neutral-content h-0.5 w-20 bottom-0 left-0 right-0 m-auto"></small></>
               )}
           </div>
         )

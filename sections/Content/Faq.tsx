@@ -2,6 +2,7 @@ import Header from "$store/components/ui/SectionHeader.tsx";
 
 export interface Question {
   question: string;
+  questionText: string;
   /** @format html */
   answer: string;
 }
@@ -33,11 +34,13 @@ const DEFAULT_PROPS = {
   questions: [
     {
       question: "Como faço para acompanhar o meu pedido?",
+      questionText: "",
       answer:
         "Acompanhar o seu pedido é fácil! Assim que o seu pedido for enviado, enviaremos um e-mail de confirmação com um número de rastreamento. Basta clicar no número de rastreamento ou visitar o nosso site e inserir o número de rastreamento na seção designada para obter atualizações em tempo real sobre a localização e o status de entrega do seu pedido.",
     },
     {
       question: "Qual é a política de devolução?",
+      questionText: "",
       answer:
         "Oferecemos uma política de devolução sem complicações. Se você não estiver completamente satisfeito(a) com a sua compra, pode devolver o item em até 30 dias após a entrega para obter um reembolso total ou troca. Certifique-se de que o item esteja sem uso, na embalagem original e acompanhado do recibo. Entre em contato com a nossa equipe de atendimento ao cliente e eles o(a) orientarão pelo processo de devolução.",
     },
@@ -49,14 +52,15 @@ const DEFAULT_PROPS = {
       text: "",
       link: "",
     },
-  },
+  }, 
 };
 
-function Question({ question, answer }: Question) {
+function Question({ question, answer, questionText }: Question) {
   return (
-    <details class="collapse collapse-arrow join-item border-t border-base-200">
-      <summary class="collapse-title text-lg font-medium">
+    <details class="collapse collapse-arrow  fundo-branco rounded-xl md:my-4">
+      <summary class="collapse-title text-lg text-secondary font-bold">
         {question}
+        <p class="text-base text-sm text-base-content font-normal">{questionText}</p>
       </summary>
       <div
         class="collapse-content"
@@ -68,12 +72,12 @@ function Question({ question, answer }: Question) {
 
 function Contact({ title, description, link }: Contact) {
   return (
-    <div class="flex flex-col gap-6 items-center text-center">
+    <div class="flex flex-col gap-6 items-center text-center w-[1020px] max-w-full mx-auto">
       <div class="flex flex-col gap-2">
         {title && <h2 class="text-xl lg:text-3xl">{title}</h2>}
         {description && (
           <div
-            class="text-lg lg:text-xl"
+            class="text-base text-sm text-base-content font-normal"
             dangerouslySetInnerHTML={{ __html: description }}
           />
         )}
@@ -96,8 +100,8 @@ export default function FAQ(props: Props) {
   return (
     <>
       {(!layout?.variation || layout?.variation === "Compact") && (
-        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-8 lg:py-10 lg:px-40">
-          <div class="flex flex-col gap-8 lg:gap-10">
+        <div class="w-full container px-4 py-8 flex flex-col gap-4 lg:gap-4 lg:py-10 lg:px-40">
+          <div class="flex flex-col gap-4 lg:gap-4">
             <Header
               title={title || ""}
               description={description || ""}

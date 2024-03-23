@@ -17,6 +17,7 @@ import { usePlatform } from "$store/sdk/usePlatform.tsx";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
+import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -38,7 +39,7 @@ function ProductInfo({ page, layout }: Props) {
     throw new Error("Missing Product Details Page Info");
   }
 
-  const { breadcrumbList, product } = page;  
+  const { breadcrumbList, product } = page;
   const {
     productID,
     offers,
@@ -80,11 +81,7 @@ function ProductInfo({ page, layout }: Props) {
         </div>
         <h1>
           <span class="font-bold apitalize text-4xl color-[#2B3243] mt-4 block font-playfair">
-            {layout?.name === "concat"
-              ? `${isVariantOf?.name} ${name}`
-              : layout?.name === "productGroup"
-              ? isVariantOf?.name
-              : name}
+            {name !== undefined ? name.replace("[SKU] ", "") : ""}
           </span>
         </h1>
       </div>
@@ -104,13 +101,13 @@ function ProductInfo({ page, layout }: Props) {
         {(listPrice ?? 0) > price && (
           <div class="fontsize-22px text-base-300 color-[#00c9a2]">
             {listPrice && price
-              ? `${
-                Math.round(((listPrice - price) / listPrice) * 100)
+              ? `${Math.round(((listPrice - price) / listPrice) * 100)
               }% de desconto`
               : ""}
           </div>
         )}
-        <div class="font-light text-base">
+        <div class="font-light text-base flex items-center">
+          <Icon width={50} height={24} id="BoletoParcelado" />
           Ou {formatPrice(price, offers?.priceCurrency)}
         </div>
       </div>
