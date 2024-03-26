@@ -19,9 +19,8 @@ export default function FooterItems(
         <>
           {/* Tablet and Desktop view */}
           <ul
-            class={`w-full hidden md:flex flex-row gap-6 lg:gap-10 ${
-              justify && "lg:justify-between"
-            }`}
+            class={`w-full hidden md:flex flex-row gap-6 lg:gap-10 ${justify && "lg:justify-between"
+              }`}
           >
             {sections.map((section) => (
               <li>
@@ -42,6 +41,26 @@ export default function FooterItems(
               </li>
             ))}
           </ul>
+
+          <div class="selos-seguranca block w-full">
+            <ul class="flex items-center gap-1 justify-center md:justify-end flex-wrap">
+            <li>
+                <a href="https://transparencyreport.google.com/safe-browsing/search?url=joiasvip.com.br&hl=pt_BR">
+                <Icon id="Selos_Reclame-Aqui-Icon" size={70} strokeWidth={0.01} />
+                </a>
+              </li>
+              <li>
+                <a href="https://transparencyreport.google.com/safe-browsing/search?url=joiasvip.com.br&hl=pt_BR">
+                <Icon id="GoogleSeguro" size={70} strokeWidth={0.01} />
+                </a>
+              </li>
+              <li>
+                <a href="https://transparencyreport.google.com/safe-browsing/search?url=joiasvip.com.br&hl=pt_BR">
+                <Icon id="IconeGPTW" size={70} strokeWidth={0.01} />
+                </a>
+              </li>
+            </ul>
+          </div>
 
           {/* Mobile view */}
           <ul class="flex w-full pl-2 mt-8 w-full flex-col md:hidden gap-4">
