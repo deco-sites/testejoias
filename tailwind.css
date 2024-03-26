@@ -210,6 +210,10 @@ button.cep {
   color: #B994FE;
 }
 
+.text-\[13px\]{
+  font-size: 13px;
+}
+
 @media (max-width: 639px) {
   .section-video iframe {
     height: 220px;

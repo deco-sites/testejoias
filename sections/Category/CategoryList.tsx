@@ -126,7 +126,7 @@ function CategoryList(props: Props) {
         alignment={layout.headerAlignment || "center"}
       />
 
-      <Slider class="carousel carousel-start gap-4 lg:gap-6 row-start-2 row-end-5 px-14 md:px-0">
+      <Slider class="carousel carousel-start gap-4 lg:gap-6 row-start-2 row-end-5 px-14 md:px-0 lg:justify-center">
         {list.map((
           { tag, label, description, href, image, buttonText },
           index,
@@ -137,7 +137,7 @@ function CategoryList(props: Props) {
           >
             <a
               href={href}
-              class="flex flex-col gap-4 lg:w-[280px] w-40 lg:h-auto"
+              class="flex flex-col gap-4 lg:h-auto"
             >
               {layout.categoryCard?.textPosition === "top" &&
                 (
@@ -152,11 +152,11 @@ function CategoryList(props: Props) {
                 (
                   <figure>
                     <Image
-                      class="card w-full"
+                      class="card"
                       src={image}
                       alt={description || label || tag}
-                      width={260}
-                      height={260}
+                      width={230}  
+                      height={230}
                       loading="lazy"
                     />
                   </figure>

@@ -186,6 +186,7 @@ function ProductInfo({ page, layout }: Props) {
           : <OutOfStock productID={productID} />}
       </div>
       {/* Shipping Simulation */}
+      {/*
       <div class="mt-8">
         <ShippingSimulation
           items={[
@@ -197,6 +198,7 @@ function ProductInfo({ page, layout }: Props) {
           ]}
         />
       </div>
+      */}
 
       {/* Analytics Event */}
       <SendEventOnView
