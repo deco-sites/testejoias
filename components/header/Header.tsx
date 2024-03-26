@@ -49,7 +49,7 @@ export interface Props {
 
   buttons?: Buttons;
 
-  linkWhats: "https://web.whatsapp.com/send?phone=5541988161686&text=Ol%C3%A1+Joias+Vip!";
+  linkWhats: string; 
 }
 
 function Header({
@@ -87,7 +87,7 @@ function Header({
   },
   logoPosition = "center",
   buttons,
-  linkWhats,
+  linkWhats = "https://web.whatsapp.com/send?phone=5541988161686&text=Ol%C3%A1+Joias+Vip!",
 }: Props) {
   const platform = usePlatform();
   const items = navItems ?? [];
@@ -116,7 +116,7 @@ function Header({
               searchbar={searchbar && { ...searchbar, platform }}
               logo={logo}
               logoPosition={logoPosition}
-              buttons={buttons}
+              buttons={buttons} 
             />
           </div>
         </Drawers>

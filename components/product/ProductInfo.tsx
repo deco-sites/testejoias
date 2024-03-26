@@ -99,7 +99,7 @@ function ProductInfo({ page, layout }: Props) {
           {installments}
         </div>
         {(listPrice ?? 0) > price && (
-          <div class="fontsize-22px text-base-300 color-[#00c9a2]">
+          <div class="fontsize-22px text-base-300 color-[#00c9a2] pb-2">
             {listPrice && price
               ? `${Math.round(((listPrice - price) / listPrice) * 100)
               }% de desconto`

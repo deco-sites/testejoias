@@ -95,11 +95,11 @@ input.aros {
 }
 
 .fundo-branco-margem-linear{
-  background: linear-gradient(180deg, rgba(238, 238, 238, 1) 50%, rgba(255, 255, 255, 1) 50%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 50%,  rgba(238, 238, 238, 1) 50%);
 }
 
 select.aros option {
-  background: #564099;
+  background: #564099; 
   color: white;
   font-weight: 100;
   font-size: 14px;

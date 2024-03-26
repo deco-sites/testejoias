@@ -11,6 +11,9 @@ function VariantSelector({ product }: Props) {
   const { url, isVariantOf, additionalProperty } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
+
+  console.log('aaaa', additionalProperty);
+
   const displayAro = !!additionalProperty?.find((prop) =>
     prop.name === "SelecionarAro" && prop.value === "true" || prop.value === "Sim"
   );
@@ -45,13 +48,13 @@ function VariantSelector({ product }: Props) {
           </li>
         ))}
       </ul>
+ 
 
-
-      {displayCasal === true && (
+      {displayCasal == true && (
         <div id="aro-casal">
-          <div class="flex flex-wrap items-center gap-3">
+          <div class="flex flex-wrap items-center gap-3 pb-4">
             <div class="md:w-2/5">
-              <label class="block text-sm text-base-300">Selecionar o aro <b>Aliança "A"</b></label>
+              <label class="block text-sm text-base-300">Selecionar o aro <b class="text-base-300 text-secondary">Aliança "A"</b></label>
               <select class="aros min-height-unset h-auto color-[#707070] outline-none mt-2 py-1 rounded">
                 <option value="empty">Medidas</option>
                 <option value="12">12</option>
@@ -71,13 +74,13 @@ function VariantSelector({ product }: Props) {
               </select>
             </div>
             <div class="md:w-1/2">
-              <label class="block text-sm text-base-300">Gravação <b>Aliança "A"</b></label>
+              <label class="block text-sm text-base-300">Gravação <b class="text-base-300 text-secondary">Aliança "A"</b></label>
               <input type="text" class="aros min-height-unset h-auto color-[#707070] outline-none mt-2 py-1 rounded"></input>
             </div>
           </div>
           <div class="flex flex-wrap items-center gap-3">
             <div class="md:w-2/5">
-              <label class="block text-sm text-base-300">Selecionar o aro <b>Aliança "B"</b></label>
+              <label class="block text-sm text-base-300">Selecionar o aro <b class="text-base-300 text-secondary">Aliança "B"</b></label>
               <select class="aros min-height-unset h-auto color-[#707070] outline-none mt-2 py-1 rounded">
                 <option value="empty">Medidas</option>
                 <option value="12">12</option>
@@ -97,7 +100,7 @@ function VariantSelector({ product }: Props) {
               </select>
             </div>
             <div class="md:w-1/2">
-              <label class="block text-sm text-base-300">Gravação <b>Aliança "B"</b></label>
+              <label class="block text-sm text-base-300">Gravação <b class="text-base-300 text-secondary">Aliança "B"</b></label>
               <input type="text" class="aros min-height-unset h-auto color-[#707070] outline-none mt-2 py-1 rounded"></input>
             </div>
           </div>
