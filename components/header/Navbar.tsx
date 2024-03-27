@@ -96,7 +96,7 @@ function Navbar({ items, searchbar, logo, buttons, logoPosition = "left" }: {
       </div>
 
       {/* Desktop Version */}
-      <div class="hidden lg:block w-full bg-white py-3">
+      <div class="hidden lg:block w-full bg-white">
         <div class="flex container justify-between items-center">
           <div class="menupricipal flex justify-end items-center">
             <ul

@@ -37,7 +37,7 @@ function ValueItem(
 
 function FilterValues({ key, values }: FilterToggle) {
   return (
-    <ul class="flex flex-wrap gap-2 max-h-[156px] overflow-y-auto">
+    <ul class="flex flex-wrap gap-2 max-h-[156px] overflow-y-auto px-4">
       {values.map((item) => {
         const { url, selected, value, quantity } = item;
 
@@ -75,8 +75,8 @@ function Filters({ filters }: Props) {
       {filters
         .filter(isToggle)
         .map((filter) => (
-          <li class="flex flex-col gap-4 bg-secondary texto-content-secondary p-4 rounded-md">
-            <span class="text-white text-[22px] font-playfair">
+          <li class="flex flex-col gap-4 bg-secondary texto-content-secondary rounded-md overflow-hidden pb-4">
+            <span class="text-white text-[22px] font-playfair bg-[#452F88]  p-4">
               {filter.label}
             </span>
             <FilterValues {...filter} />

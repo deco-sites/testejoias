@@ -232,3 +232,7 @@ button.cep {
     zoom: 1.2;
   }
 }
+
+.checkbox:checked,.checkbox[aria-checked=true],.checkbox[checked=true] { 
+  background-image: linear-gradient(-45deg,transparent 65%,#B994FE 65.99%),linear-gradient(45deg,transparent 75%,#B994FE 75.99%),linear-gradient(-45deg,#B994FE 40%,transparent 40.99%),linear-gradient(45deg,#B994FE 30%,var(--chkfg) 30.99%,var(--chkfg) 40%,transparent 40.99%),linear-gradient(-45deg,var(--chkfg) 50%,#B994FE 50.99%)
+}

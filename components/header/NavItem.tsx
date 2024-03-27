@@ -8,9 +8,10 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
 
   return (
     <li
-      class={`group flex items-center relative ${
-        children && children.length > 0 ? "has-children" : ""
-      }`}
+      class={`group flex items-center relative py-3
+        ${children && children.length > 0 ? "has-children" : ""}
+        ${name == "Ofertas 24h" ? "bg-[#B994FE] px-1" : "" }
+      `}
     >
       <a href={url} class="py-6">
         <span class="text-sm text-secondary font-semibold">{name}</span>

@@ -59,18 +59,21 @@ function Result({
 
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
+  const limpaFiltro = breadcrumb.itemListElement[0].item; 
   return (
     <>
       <div class="container px-4 sm:py-10">
         <div class="flex flex-row gap-20">
           {layout?.variant === "aside" && filters.length > 0 && (
             <aside class="hidden sm:block w-min min-w-72">
-              <p>
+              <p class="flex align-center">
                 <span class="text-secondary text-2xl font-playfair font-semibold">
                   Filtrar
                 </span>
+                <a href={`${limpaFiltro}`}><button id="limpar-filtros" class="btn bg-transparent text-sm btn-block rounded-[60px] ml-2 py-1 min-height-unset h-auto w-auto text-success hover:text-white">Limpar</button></a>
               </p>
               <Filters filters={filters} />
+              <a href={`${limpaFiltro}`}><button id="limpar-filtros" class="btn bg-transparent text-sm btn-block rounded-[60px] ml-2 py-1 min-height-unset h-auto w-auto text-success hover:text-white">Limpar</button></a>
             </aside>
           )}
           <div class="mt-2 md:mt-12 flex-grow" id={id}>
