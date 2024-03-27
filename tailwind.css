@@ -49,10 +49,18 @@
   0% {
     --dot-progress: 0%
   }
-
+ 
   to {
     --dot-progress: 100%
   }
+}
+
+.border-t{
+  border-top-width: 1px;
+}
+
+.border-r{
+  border-right-width: 1px;
 }
 
 .drawer-end .drawer-toggle~.drawer-side {
@@ -215,6 +223,20 @@ button.cep {
 }
 
 @media (max-width: 639px) {
+
+  .informacoes .tabela-medida{
+    justify-content: center;
+    margin-top: 25px;
+  }
+ 
+  .informacoes .content .aro{
+    width: 80px;
+  }
+
+  .informacoes .content .diametro{
+    width: 100px;
+  }
+
   .section-video iframe {
     height: 220px;
     border-radius: 16px;
