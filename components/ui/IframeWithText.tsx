@@ -20,7 +20,7 @@ export interface Props {
             </div>            
         </div>
         <div class="iframe lg:w-3/5 bg-[#FFFFFF]">
-            <iframe src="https://www.joiasvip.com.br/formulario-carreira" width="500" height="500" allowfullscreen></iframe>
+            <iframe src={iframe} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </div>       
       </div>
     );  

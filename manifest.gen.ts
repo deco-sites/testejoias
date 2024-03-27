@@ -23,59 +23,60 @@ import * as $$$$$$13 from "./sections/Content/CallToAction.tsx";
 import * as $$$$$$14 from "./sections/Content/ComentariosClientes.tsx";
 import * as $$$$$$15 from "./sections/Content/Faq.tsx";
 import * as $$$$$$16 from "./sections/Content/Features.tsx";
-import * as $$$$$$17 from "./sections/Content/Hero.tsx";
-import * as $$$$$$18 from "./sections/Content/IframeWithText.tsx";
-import * as $$$$$$19 from "./sections/Content/ImageSection.tsx";
-import * as $$$$$$20 from "./sections/Content/Intro.tsx";
-import * as $$$$$$21 from "./sections/Content/Logos.tsx";
-import * as $$$$$$22 from "./sections/Content/NossosPilares.tsx";
-import * as $$$$$$23 from "./sections/Content/Partners.tsx";
-import * as $$$$$$24 from "./sections/Content/RichText.tsx";
-import * as $$$$$$25 from "./sections/Content/TabelaDeGemas.tsx";
-import * as $$$$$$26 from "./sections/Content/Table.tsx";
-import * as $$$$$$27 from "./sections/Content/Testimonials.tsx";
-import * as $$$$$$29 from "./sections/Content/TextosEColunaLateralDeContatos.tsx";
-import * as $$$$$$28 from "./sections/Content/TextWithImage.tsx";
-import * as $$$$$$30 from "./sections/Content/TituloETexto.tsx";
-import * as $$$$$$31 from "./sections/Content/TopoPadraoPaginas.tsx";
-import * as $$$$$$32 from "./sections/Content/Video.tsx";
-import * as $$$$$$33 from "./sections/Footer/Footer.tsx";
-import * as $$$$$$34 from "./sections/Gallery.tsx";
-import * as $$$$$$35 from "./sections/Header/Header.tsx";
-import * as $$$$$$36 from "./sections/Images/BannerGrid.tsx";
-import * as $$$$$$37 from "./sections/Images/BannerSimples.tsx";
-import * as $$$$$$38 from "./sections/Images/Carousel.tsx";
-import * as $$$$$$39 from "./sections/Images/ImageGallery.tsx";
-import * as $$$$$$40 from "./sections/Images/ImagemETexto.tsx";
-import * as $$$$$$41 from "./sections/Images/ShoppableBanner.tsx";
-import * as $$$$$$42 from "./sections/Layout/Container.tsx";
-import * as $$$$$$43 from "./sections/Layout/Flex.tsx";
-import * as $$$$$$44 from "./sections/Layout/Grid.tsx";
-import * as $$$$$$45 from "./sections/Layout/GridItem.tsx";
-import * as $$$$$$46 from "./sections/Leilao/DetalheLeilao.tsx";
-import * as $$$$$$47 from "./sections/Leilao/ListaDeLeiloes.tsx";
-import * as $$$$$$48 from "./sections/Links/LinkTree.tsx";
-import * as $$$$$$49 from "./sections/Links/Shortcuts.tsx";
-import * as $$$$$$50 from "./sections/Miscellaneous/CampaignTimer.tsx";
-import * as $$$$$$51 from "./sections/Miscellaneous/CookieConsent.tsx";
-import * as $$$$$$52 from "./sections/Miscellaneous/Slide.tsx";
-import * as $$$$$$53 from "./sections/Newsletter/Newsletter.tsx";
-import * as $$$$$$54 from "./sections/Product/BreadcrumbProduct.tsx";
-import * as $$$$$$55 from "./sections/Product/DescriptionProduct.tsx";
-import * as $$$$$$56 from "./sections/Product/ImageGalleryFrontBack.tsx";
-import * as $$$$$$57 from "./sections/Product/ImageGallerySlider.tsx";
-import * as $$$$$$58 from "./sections/Product/InformacoesJoias.tsx";
-import * as $$$$$$59 from "./sections/Product/NotFound.tsx";
-import * as $$$$$$60 from "./sections/Product/NotFoundChallenge.tsx";
-import * as $$$$$$61 from "./sections/Product/ProductInfo.tsx";
-import * as $$$$$$62 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$63 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$64 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$65 from "./sections/Product/ShelfWithImage.tsx";
-import * as $$$$$$66 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$67 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$68 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$69 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$17 from "./sections/Content/GuiaMedidas.tsx";
+import * as $$$$$$18 from "./sections/Content/Hero.tsx";
+import * as $$$$$$19 from "./sections/Content/IframeWithText.tsx";
+import * as $$$$$$20 from "./sections/Content/ImageSection.tsx";
+import * as $$$$$$21 from "./sections/Content/Intro.tsx";
+import * as $$$$$$22 from "./sections/Content/Logos.tsx";
+import * as $$$$$$23 from "./sections/Content/NossosPilares.tsx";
+import * as $$$$$$24 from "./sections/Content/Partners.tsx";
+import * as $$$$$$25 from "./sections/Content/RichText.tsx";
+import * as $$$$$$26 from "./sections/Content/TabelaDeGemas.tsx";
+import * as $$$$$$27 from "./sections/Content/Table.tsx";
+import * as $$$$$$28 from "./sections/Content/Testimonials.tsx";
+import * as $$$$$$30 from "./sections/Content/TextosEColunaLateralDeContatos.tsx";
+import * as $$$$$$29 from "./sections/Content/TextWithImage.tsx";
+import * as $$$$$$31 from "./sections/Content/TituloETexto.tsx";
+import * as $$$$$$32 from "./sections/Content/TopoPadraoPaginas.tsx";
+import * as $$$$$$33 from "./sections/Content/Video.tsx";
+import * as $$$$$$34 from "./sections/Footer/Footer.tsx";
+import * as $$$$$$35 from "./sections/Gallery.tsx";
+import * as $$$$$$36 from "./sections/Header/Header.tsx";
+import * as $$$$$$37 from "./sections/Images/BannerGrid.tsx";
+import * as $$$$$$38 from "./sections/Images/BannerSimples.tsx";
+import * as $$$$$$39 from "./sections/Images/Carousel.tsx";
+import * as $$$$$$40 from "./sections/Images/ImageGallery.tsx";
+import * as $$$$$$41 from "./sections/Images/ImagemETexto.tsx";
+import * as $$$$$$42 from "./sections/Images/ShoppableBanner.tsx";
+import * as $$$$$$43 from "./sections/Layout/Container.tsx";
+import * as $$$$$$44 from "./sections/Layout/Flex.tsx";
+import * as $$$$$$45 from "./sections/Layout/Grid.tsx";
+import * as $$$$$$46 from "./sections/Layout/GridItem.tsx";
+import * as $$$$$$47 from "./sections/Leilao/DetalheLeilao.tsx";
+import * as $$$$$$48 from "./sections/Leilao/ListaDeLeiloes.tsx";
+import * as $$$$$$49 from "./sections/Links/LinkTree.tsx";
+import * as $$$$$$50 from "./sections/Links/Shortcuts.tsx";
+import * as $$$$$$51 from "./sections/Miscellaneous/CampaignTimer.tsx";
+import * as $$$$$$52 from "./sections/Miscellaneous/CookieConsent.tsx";
+import * as $$$$$$53 from "./sections/Miscellaneous/Slide.tsx";
+import * as $$$$$$54 from "./sections/Newsletter/Newsletter.tsx";
+import * as $$$$$$55 from "./sections/Product/BreadcrumbProduct.tsx";
+import * as $$$$$$56 from "./sections/Product/DescriptionProduct.tsx";
+import * as $$$$$$57 from "./sections/Product/ImageGalleryFrontBack.tsx";
+import * as $$$$$$58 from "./sections/Product/ImageGallerySlider.tsx";
+import * as $$$$$$59 from "./sections/Product/InformacoesJoias.tsx";
+import * as $$$$$$60 from "./sections/Product/NotFound.tsx";
+import * as $$$$$$61 from "./sections/Product/NotFoundChallenge.tsx";
+import * as $$$$$$62 from "./sections/Product/ProductInfo.tsx";
+import * as $$$$$$63 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$64 from "./sections/Product/ProductShelfTabbed.tsx";
+import * as $$$$$$65 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$66 from "./sections/Product/ShelfWithImage.tsx";
+import * as $$$$$$67 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$68 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$69 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$70 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
   "loaders": {
@@ -102,61 +103,62 @@ const manifest = {
     "deco-sites/testejoias/sections/Content/ComentariosClientes.tsx": $$$$$$14,
     "deco-sites/testejoias/sections/Content/Faq.tsx": $$$$$$15,
     "deco-sites/testejoias/sections/Content/Features.tsx": $$$$$$16,
-    "deco-sites/testejoias/sections/Content/Hero.tsx": $$$$$$17,
-    "deco-sites/testejoias/sections/Content/IframeWithText.tsx": $$$$$$18,
-    "deco-sites/testejoias/sections/Content/ImageSection.tsx": $$$$$$19,
-    "deco-sites/testejoias/sections/Content/Intro.tsx": $$$$$$20,
-    "deco-sites/testejoias/sections/Content/Logos.tsx": $$$$$$21,
-    "deco-sites/testejoias/sections/Content/NossosPilares.tsx": $$$$$$22,
-    "deco-sites/testejoias/sections/Content/Partners.tsx": $$$$$$23,
-    "deco-sites/testejoias/sections/Content/RichText.tsx": $$$$$$24,
-    "deco-sites/testejoias/sections/Content/TabelaDeGemas.tsx": $$$$$$25,
-    "deco-sites/testejoias/sections/Content/Table.tsx": $$$$$$26,
-    "deco-sites/testejoias/sections/Content/Testimonials.tsx": $$$$$$27,
+    "deco-sites/testejoias/sections/Content/GuiaMedidas.tsx": $$$$$$17,
+    "deco-sites/testejoias/sections/Content/Hero.tsx": $$$$$$18,
+    "deco-sites/testejoias/sections/Content/IframeWithText.tsx": $$$$$$19,
+    "deco-sites/testejoias/sections/Content/ImageSection.tsx": $$$$$$20,
+    "deco-sites/testejoias/sections/Content/Intro.tsx": $$$$$$21,
+    "deco-sites/testejoias/sections/Content/Logos.tsx": $$$$$$22,
+    "deco-sites/testejoias/sections/Content/NossosPilares.tsx": $$$$$$23,
+    "deco-sites/testejoias/sections/Content/Partners.tsx": $$$$$$24,
+    "deco-sites/testejoias/sections/Content/RichText.tsx": $$$$$$25,
+    "deco-sites/testejoias/sections/Content/TabelaDeGemas.tsx": $$$$$$26,
+    "deco-sites/testejoias/sections/Content/Table.tsx": $$$$$$27,
+    "deco-sites/testejoias/sections/Content/Testimonials.tsx": $$$$$$28,
     "deco-sites/testejoias/sections/Content/TextosEColunaLateralDeContatos.tsx":
-      $$$$$$29,
-    "deco-sites/testejoias/sections/Content/TextWithImage.tsx": $$$$$$28,
-    "deco-sites/testejoias/sections/Content/TituloETexto.tsx": $$$$$$30,
-    "deco-sites/testejoias/sections/Content/TopoPadraoPaginas.tsx": $$$$$$31,
-    "deco-sites/testejoias/sections/Content/Video.tsx": $$$$$$32,
-    "deco-sites/testejoias/sections/Footer/Footer.tsx": $$$$$$33,
-    "deco-sites/testejoias/sections/Gallery.tsx": $$$$$$34,
-    "deco-sites/testejoias/sections/Header/Header.tsx": $$$$$$35,
-    "deco-sites/testejoias/sections/Images/BannerGrid.tsx": $$$$$$36,
-    "deco-sites/testejoias/sections/Images/BannerSimples.tsx": $$$$$$37,
-    "deco-sites/testejoias/sections/Images/Carousel.tsx": $$$$$$38,
-    "deco-sites/testejoias/sections/Images/ImageGallery.tsx": $$$$$$39,
-    "deco-sites/testejoias/sections/Images/ImagemETexto.tsx": $$$$$$40,
-    "deco-sites/testejoias/sections/Images/ShoppableBanner.tsx": $$$$$$41,
-    "deco-sites/testejoias/sections/Layout/Container.tsx": $$$$$$42,
-    "deco-sites/testejoias/sections/Layout/Flex.tsx": $$$$$$43,
-    "deco-sites/testejoias/sections/Layout/Grid.tsx": $$$$$$44,
-    "deco-sites/testejoias/sections/Layout/GridItem.tsx": $$$$$$45,
-    "deco-sites/testejoias/sections/Leilao/DetalheLeilao.tsx": $$$$$$46,
-    "deco-sites/testejoias/sections/Leilao/ListaDeLeiloes.tsx": $$$$$$47,
-    "deco-sites/testejoias/sections/Links/LinkTree.tsx": $$$$$$48,
-    "deco-sites/testejoias/sections/Links/Shortcuts.tsx": $$$$$$49,
-    "deco-sites/testejoias/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$50,
-    "deco-sites/testejoias/sections/Miscellaneous/CookieConsent.tsx": $$$$$$51,
-    "deco-sites/testejoias/sections/Miscellaneous/Slide.tsx": $$$$$$52,
-    "deco-sites/testejoias/sections/Newsletter/Newsletter.tsx": $$$$$$53,
-    "deco-sites/testejoias/sections/Product/BreadcrumbProduct.tsx": $$$$$$54,
-    "deco-sites/testejoias/sections/Product/DescriptionProduct.tsx": $$$$$$55,
+      $$$$$$30,
+    "deco-sites/testejoias/sections/Content/TextWithImage.tsx": $$$$$$29,
+    "deco-sites/testejoias/sections/Content/TituloETexto.tsx": $$$$$$31,
+    "deco-sites/testejoias/sections/Content/TopoPadraoPaginas.tsx": $$$$$$32,
+    "deco-sites/testejoias/sections/Content/Video.tsx": $$$$$$33,
+    "deco-sites/testejoias/sections/Footer/Footer.tsx": $$$$$$34,
+    "deco-sites/testejoias/sections/Gallery.tsx": $$$$$$35,
+    "deco-sites/testejoias/sections/Header/Header.tsx": $$$$$$36,
+    "deco-sites/testejoias/sections/Images/BannerGrid.tsx": $$$$$$37,
+    "deco-sites/testejoias/sections/Images/BannerSimples.tsx": $$$$$$38,
+    "deco-sites/testejoias/sections/Images/Carousel.tsx": $$$$$$39,
+    "deco-sites/testejoias/sections/Images/ImageGallery.tsx": $$$$$$40,
+    "deco-sites/testejoias/sections/Images/ImagemETexto.tsx": $$$$$$41,
+    "deco-sites/testejoias/sections/Images/ShoppableBanner.tsx": $$$$$$42,
+    "deco-sites/testejoias/sections/Layout/Container.tsx": $$$$$$43,
+    "deco-sites/testejoias/sections/Layout/Flex.tsx": $$$$$$44,
+    "deco-sites/testejoias/sections/Layout/Grid.tsx": $$$$$$45,
+    "deco-sites/testejoias/sections/Layout/GridItem.tsx": $$$$$$46,
+    "deco-sites/testejoias/sections/Leilao/DetalheLeilao.tsx": $$$$$$47,
+    "deco-sites/testejoias/sections/Leilao/ListaDeLeiloes.tsx": $$$$$$48,
+    "deco-sites/testejoias/sections/Links/LinkTree.tsx": $$$$$$49,
+    "deco-sites/testejoias/sections/Links/Shortcuts.tsx": $$$$$$50,
+    "deco-sites/testejoias/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$51,
+    "deco-sites/testejoias/sections/Miscellaneous/CookieConsent.tsx": $$$$$$52,
+    "deco-sites/testejoias/sections/Miscellaneous/Slide.tsx": $$$$$$53,
+    "deco-sites/testejoias/sections/Newsletter/Newsletter.tsx": $$$$$$54,
+    "deco-sites/testejoias/sections/Product/BreadcrumbProduct.tsx": $$$$$$55,
+    "deco-sites/testejoias/sections/Product/DescriptionProduct.tsx": $$$$$$56,
     "deco-sites/testejoias/sections/Product/ImageGalleryFrontBack.tsx":
-      $$$$$$56,
-    "deco-sites/testejoias/sections/Product/ImageGallerySlider.tsx": $$$$$$57,
-    "deco-sites/testejoias/sections/Product/InformacoesJoias.tsx": $$$$$$58,
-    "deco-sites/testejoias/sections/Product/NotFound.tsx": $$$$$$59,
-    "deco-sites/testejoias/sections/Product/NotFoundChallenge.tsx": $$$$$$60,
-    "deco-sites/testejoias/sections/Product/ProductInfo.tsx": $$$$$$61,
-    "deco-sites/testejoias/sections/Product/ProductShelf.tsx": $$$$$$62,
-    "deco-sites/testejoias/sections/Product/ProductShelfTabbed.tsx": $$$$$$63,
-    "deco-sites/testejoias/sections/Product/SearchResult.tsx": $$$$$$64,
-    "deco-sites/testejoias/sections/Product/ShelfWithImage.tsx": $$$$$$65,
-    "deco-sites/testejoias/sections/Product/Wishlist.tsx": $$$$$$66,
-    "deco-sites/testejoias/sections/Social/InstagramPosts.tsx": $$$$$$67,
-    "deco-sites/testejoias/sections/Social/WhatsApp.tsx": $$$$$$68,
-    "deco-sites/testejoias/sections/Theme/Theme.tsx": $$$$$$69,
+      $$$$$$57,
+    "deco-sites/testejoias/sections/Product/ImageGallerySlider.tsx": $$$$$$58,
+    "deco-sites/testejoias/sections/Product/InformacoesJoias.tsx": $$$$$$59,
+    "deco-sites/testejoias/sections/Product/NotFound.tsx": $$$$$$60,
+    "deco-sites/testejoias/sections/Product/NotFoundChallenge.tsx": $$$$$$61,
+    "deco-sites/testejoias/sections/Product/ProductInfo.tsx": $$$$$$62,
+    "deco-sites/testejoias/sections/Product/ProductShelf.tsx": $$$$$$63,
+    "deco-sites/testejoias/sections/Product/ProductShelfTabbed.tsx": $$$$$$64,
+    "deco-sites/testejoias/sections/Product/SearchResult.tsx": $$$$$$65,
+    "deco-sites/testejoias/sections/Product/ShelfWithImage.tsx": $$$$$$66,
+    "deco-sites/testejoias/sections/Product/Wishlist.tsx": $$$$$$67,
+    "deco-sites/testejoias/sections/Social/InstagramPosts.tsx": $$$$$$68,
+    "deco-sites/testejoias/sections/Social/WhatsApp.tsx": $$$$$$69,
+    "deco-sites/testejoias/sections/Theme/Theme.tsx": $$$$$$70,
   },
   "apps": {
     "deco-sites/testejoias/apps/decohub.ts": $$$$$$$$$$$0,
